@@ -7,7 +7,10 @@
  */
 
 package seg.jUCMNav.importexport.ccistarml;
-import java.util.*;
+
+import java.util.Collection;
+import java.util.LinkedList;
+
 
 public class IDManager extends LinkedList  {
     private String lastID="AA00";

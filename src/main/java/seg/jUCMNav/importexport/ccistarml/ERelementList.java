@@ -7,9 +7,12 @@
  */
 
 package seg.jUCMNav.importexport.ccistarml;
-import java.util.*;
 
-public class ERelementList {
+import java.util.Iterator;
+import java.util.LinkedList;
+
+
+public final class ERelementList {
 
     private LinkedList previousRef = new LinkedList();
     private LinkedList element = new LinkedList();
