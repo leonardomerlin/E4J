@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<istarml version="1.0">
+    <diagram name="Example 1">
+        <actor name="Hospital"/>
+        <actor name="Patient" type="role"/>
+    </diagram>
+</istarml>

@@ -18,9 +18,10 @@ public class Main {
         ERelementList erL;
         ERelement erle;
         ccistarmlFile f = new ccistarmlFile();
-        f.loadFile("sample.istarml"); // put your file name here !
+        f.loadFile("sample/sample1.istarml"); // put your file name here !
         f.xmlParser();
         f.istarmlParser();
+        System.out.println(f.buildXML());
         System.out.println("Cantidad de errores: " + f.errors());
         f.displayErrors();
     }

@@ -173,8 +173,8 @@ public class ccistarmlContent {
     public void set_attribute(String att, String value) {
         String val = value;
         if (att.equals("id")) {
-            if (!this.idmanager.add(val)) {
-                val = this.idmanager.newID();
+            if (!ccistarmlContent.idmanager.add(val)) {
+                val = ccistarmlContent.idmanager.newID();
             }
         }
         //this.attribute.remove(att);
