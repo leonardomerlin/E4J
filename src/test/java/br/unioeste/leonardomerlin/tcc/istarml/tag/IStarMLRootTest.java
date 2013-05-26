@@ -1,9 +1,5 @@
 package br.unioeste.leonardomerlin.tcc.istarml.tag;
 
-import br.unioeste.leonardomerlin.tcc.istarml.tag.IStarMLRoot;
-import br.unioeste.leonardomerlin.tcc.istarml.tag.Diagram;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import junit.framework.TestCase;
 
 public class IStarMLRootTest extends TestCase {
