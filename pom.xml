@@ -38,5 +38,10 @@
       <artifactId>TCC-Log</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.jvnet.jaxb2.maven2</groupId>
+      <artifactId>maven-jaxb2-plugin</artifactId>
+      <version>0.8.3</version>
+    </dependency>
   </dependencies>
 </project>
