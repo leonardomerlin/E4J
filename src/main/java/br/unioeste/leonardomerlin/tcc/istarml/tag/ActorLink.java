@@ -34,6 +34,9 @@ public class ActorLink {
     @XmlElement(required = false)
     private Graphic graphicPath;
 
+    public ActorLink() {
+    }
+    
     public ActorLink(Actor actor, ActorLinkType type) {  
         if (null == actor) {
             throw new IllegalArgumentException("Actor must be not null.");

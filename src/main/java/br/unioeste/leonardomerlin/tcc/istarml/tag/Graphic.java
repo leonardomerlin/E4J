@@ -1,11 +1,13 @@
 package br.unioeste.leonardomerlin.tcc.istarml.tag;
 
+import java.awt.Color;
 import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Represent some graphic properties of a particular diagram or diagram element.
@@ -25,9 +27,11 @@ public class Graphic {
     @XmlAttribute private String height;
     // g-options-[diagram|node|shape|path] - optional
     @XmlAttribute private String unit;
-    @XmlAttribute private String bgcolor;
+    @XmlJavaTypeAdapter(ColorAdapter.class)
+    @XmlAttribute private Color bgcolor;
     // g-options-[node|shape|path] - optional
-    @XmlAttribute private String fontcolor;
+    @XmlJavaTypeAdapter(ColorAdapter.class)
+    @XmlAttribute private Color fontcolor;
     @XmlAttribute private String fontfamily;
     @XmlAttribute private String fontsize;
     

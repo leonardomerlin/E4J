@@ -1,8 +1,6 @@
 package br.unioeste.leonardomerlin.tcc.istarml.tag;
 
 import java.util.List;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -28,5 +26,7 @@ public class Boundary {
     
     @XmlElement
     private List<IElement> actors;
-    
+
+    public Boundary() {
+    }
 }

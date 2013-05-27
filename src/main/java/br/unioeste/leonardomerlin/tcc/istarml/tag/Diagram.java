@@ -26,11 +26,12 @@ import javax.xml.namespace.QName;
  * @author Leonardo Merlin
  */
 @XmlRootElement(name = "diagram")
-public class Diagram extends CommonsAttributes{
+public class Diagram {
+    /**
+     * Attrs: id, name.
+     */
+    private BasicAttributes basicAttrs;
     
-    // basicAttrs(id, name), extraAttrs from parent.
-    
-//    @XmlAttribute(name = "author", required = false) // in 'get' method.
     private String author;
     
     @XmlElement
@@ -41,6 +42,10 @@ public class Diagram extends CommonsAttributes{
     
     @XmlElement
     private List<IElement> iElementExTag;
+    
+    public Diagram(){
+        this.basicAttrs = new BasicAttributes();
+    }
     
     /**
      *
@@ -54,10 +59,32 @@ public class Diagram extends CommonsAttributes{
         if (null == id && null == name) {
             throw new IllegalArgumentException("One of arguments (id or name) must be not null.");
         }
-        this.id = id;
-        this.name = name;
+        
+        this.basicAttrs = new BasicAttributes(id, name);
+    }
+    
+    @XmlAttribute
+    public String getId() {
+        return this.basicAttrs.getId();
+    }
+    
+    public void setId(String id) {
+        this.basicAttrs.setId(id);
+    }
+    
+    @XmlAttribute
+    public String getName() {
+        return this.basicAttrs.getName();
     }
 
+    public void setName(String name) {
+        this.basicAttrs.setName(name);
+    }
+    
+    public String getRef() {
+        return this.basicAttrs.getRef();
+    }
+    
     /**
      *
      * @return

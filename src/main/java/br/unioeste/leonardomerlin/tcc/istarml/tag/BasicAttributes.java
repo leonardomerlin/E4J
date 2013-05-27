@@ -1,28 +1,28 @@
 package br.unioeste.leonardomerlin.tcc.istarml.tag;
 
-import java.util.HashMap;
-import java.util.Map;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.namespace.QName;
-
 /**
- * This class represents the 'basicAtts' and 'extraAtt'.
+ * BasicAtts. (id, name).<br/>
  * 
- * Accessible only in this package.
- *
- * @author Leonardo Merlin
+ * @author Leonardo
  */
-class CommonsAttributes {
-
+class BasicAttributes {
+    
     protected String id;
+    
     protected String name;
-    @XmlAnyAttribute
-    protected Map<QName, String> extraAtt = new HashMap<>();
 
+    public BasicAttributes() {
+    }
+
+    public BasicAttributes(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
     public String getId() {
         return id;
     }
-
+    
     public void setId(String id) {
         if ((null == this.id && null == name) || id.isEmpty()) {
             throw new IllegalArgumentException("Both attributes (id and name) can not be null. See class details or the language spec.");
@@ -43,24 +43,6 @@ class CommonsAttributes {
         this.name = name;
     }
 
-    /**
-     *
-     * @param attributeName - Can not be 'id', 'name', 'author' or other class
-     * attribute name.
-     * @return the value to which the specified key is mapped, or null if this
-     * map contains no mapping for the key.
-     */
-    public String getAttributeValue(String attributeName) {
-        if ((attributeName.equals("id") || (attributeName.equals("name"))
-                || attributeName.equals("author"))) {
-            throw new IllegalArgumentException("Can not be 'id', 'name', 'author' or other class attribute name.");
-        }
-        return this.extraAtt.get(new QName(attributeName));
-    }
-
-    public void setAttribute(String name, String value) {
-        this.extraAtt.put(new QName(name), value);
-    }
     
     public String getRef() {
         boolean noId, noName;
