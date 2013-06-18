@@ -1,4 +1,4 @@
-# Editor for JGOOSE (E4J)
+# E4J - Editor for JGOOSE
 
 This project is an JGraph Diagram Editor for JGOOSE.
 
