@@ -1,6 +1,16 @@
+###Java###
+# Compiled Files #
 *.class
-
 # Package Files #
 *.jar
 *.war
 *.ear
+
+###NetBeans###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml

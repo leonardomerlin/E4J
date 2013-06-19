@@ -16,5 +16,7 @@ Comming soon.
    branch
 5. That's it!
 
+Or use [git-flow](https://github.com/nvie/gitflow).
+
 ## Need a help?
 Me too. Fork this!
