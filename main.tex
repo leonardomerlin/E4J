@@ -1,0 +1,107 @@
+%%%
+% Universidade Estadual do Oeste do Paraná - Unioeste
+% Centro de Ciências Exatas e Tecnológicas
+% Curso de Bacharelado em Ciência da Computação
+% Conteúdo: Arquivo principal para a compilação do TCC
+% Obs.: Para maiores personalizações, veja o arquivo "unioeste.sty"
+%%%
+\documentclass[12pt, oneside, a4paper, brazil]{book}
+
+% ---
+% Tratamento de acentos / charset
+% ---
+\usepackage[T1]{fontenc}
+% Em caso de problemas na compilação, tente alternar os packages abaixo:
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+% ---
+
+\usepackage{unioeste}
+
+% ---
+% document
+% ---
+\begin{document}
+
+% numeracao em romanos para paginas iniciais (capa, agradecimentos, etc)
+\pagestyle{empty}
+\pagenumbering{roman}
+
+% paginas iniciais
+\include{iniciais/capa}
+\include{iniciais/rosto}
+\include{iniciais/aprovacao}
+
+\oneandhalfspacing
+
+%Itens opcionais
+\include{iniciais/dedicatoria}
+\include{iniciais/epigrafe}
+\include{iniciais/agradecimento}
+
+% Volta a numeração arábica
+\pagestyle{plain}
+\include{iniciais/sumario} % Listas(Figuras,Tabelas,Smbols) e Sumrio
+\include{iniciais/resumo}
+
+%=======================================================================
+% Definir um estilo para páginas completas (cabealho + rodapé)
+\pagestyle{plain}
+
+% Marca de captulo do tipo "2. Blblbl..." no cabealho
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ {#1}}{}}
+
+% Para aumentar o tamanho da caixa para o cabealho
+\addtolength{\headheight}{\baselineskip}
+
+% Definindo o contedo do cabealho...
+\fancyhf{}
+\fancyhead[LO,LE]{\nouppercase{\textsf{\leftmark}}}
+\fancyhead[RO,RE]{\thepage}
+
+
+\fancypagestyle{plain}{
+	% Para garantir que a primeira página de cada capítulo
+	% não contenha nada (paginação, cabeçalho, rodapé)
+	\fancyhf{} % clear all six fields
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+%=======================================================
+% Capitulos sao numerados arabicamente
+\pagenumbering{arabic}
+
+\oneandhalfspacing
+% Inclusão dos capítulos
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
+\include{capitulo4}
+\include{capitulo5}
+%\include{capitulo6}
+\include{capitulo7}
+
+
+% Inclusão dos apêndices
+\oneandhalfspacing
+\appendix
+\include{apendice1}
+
+%\begin{attachments}
+%\include{anexo1}
+%\end{attachments}
+
+% incluindo o glossário
+% \include{glossario/glossario}
+% \pagebreak
+
+% Referências Bibliográficas
+% \bibliographystyle{abnt-alf}
+\bibliographystyle{abnt-num} % use 'abnt-num.bst'
+\pagebreak
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+
+% \citeoption{abnt-etal-cite=2} % only abnt-alf
+\bibliography{referencias/abnt-options,referencias/_example,referencias/unioeste,referencias/commons,referencias/books,referencias/tecnologias,referencias/istar}
+
+\end {document}	%% Fim do Documento

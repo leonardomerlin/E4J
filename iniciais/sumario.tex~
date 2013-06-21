@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Lista de Figuras
+%%% Lista de Tabelas
+%%% Lista de Símbolos
+%%% Sumário
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Figuras}
+\listoffigures
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Tabelas}
+\listoftables
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Abreviaturas e Siglas}
+\chapter*{Lista de Abreviaturas e Siglas}
+\begin{tabular}{ll}
+	OMS		& Organização Mundial da Saúde\\
+	UNIOESTE & Universidade Estadual do Oeste do Paraná\\
+%	ABNT & Associação Brasileira de Normas Técnicas\\
+%	JADE & \textit{Java Agent Developement Framework}
+\end{tabular}
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Símbolos}
+\chapter*{Lista de Símbolos}
+\begin{tabular}{ll}
+	
+%%
+%% Humanos
+%%
+
+% Compartimentos
+%	$Sh$ & Total de humanos no estado suscetível\\
+%	$Eh$ & Total de humanos no estado exposto\\
+%	$Ih$ & Total de humanos no estado infectante\\
+%	$Rh$ & Total de humanos no estado recuperado e renovado\\
+		
+
+%%
+%% Mosquitos
+%%
+
+% Compartimentos
+	% Fase aquática
+%	$Ov$ & total de mosquitos no estado oval\\
+%	$Lv$ & total de mosquitos no estado larval\\
+%	$Pv$ & total de mosquitos no estado de pupa\\ % 'pupal'
+	$Mo$ & total de mosquitos no estágio oval\\
+	$Ml$ & total de mosquitos no estágio larval\\
+	$Mp$ & total de mosquitos no estágio de pupa\\ % 'pupal'
+	% Fase alada
+%	$Sv$ & total de mosquitos no estado suscetível\\
+%	$Ev$ & total de mosquitos no estado exposto\\
+%	$Iv$ & total de mosquitos no estado infectante\\
+%	$Rv$ & total de mosquitos no estado renovado\\
+	$Ms$ & total de mosquitos no compartimento suscetível\\
+	$Me$ & total de mosquitos no compartimento exposto\\
+	$Mi$ & total de mosquitos no compartimento infectante\\
+	$Mr$ & total de mosquitos no compartimento renovado\\
+
+\\
+% Transições
+	% Fase aquática
+	$ \sigma_{o \rightarrow l} $	& taxa de transição do estágio oval para o estágio larval\\
+	$ \sigma_{l \rightarrow p} $	& taxa de transição do estágio larval para o estágio de pupa\\ %pupal? haha
+	$ \sigma_{p \rightarrow s} $ 	& taxa de transição do estágio de pupa para o compartimento dos mosquitos adultos suscetíveis\\		
+	% Fase alada
+	$\sigma_{s \rightarrow e}$ 		& taxa de transição dos mosquitos suscetíveis para mosquitos expostos\\% beta_w
+	$\sigma_{e \rightarrow i}$ 		& taxa de transição dos mosquitos expostos para mosquitos infectantes\\
+	%Artifícios
+	$\sigma_{i \rightarrow r}^*$ 	& taxa de transição dos mosquitos infectantes para mosquitos renovados (artifício)\\
+	$\sigma_{r \rightarrow s}^*$ 	& taxa de transição dos mosquitos renovados para o estado suscetível (artifício)\\
+\\
+% Inviabilidade | Mortalidade | Controle |
+	$\iota_{mn}$	& taxa de inviabilidade dos mosquitos adultos por morte natural\\
+	$\iota_{cq}^1$ 	& taxa de inviabilidade dos mosquitos no estágio aquático por controle químico\\
+	$\iota_{cq}^2$ 	& taxa de inviabilidade dos mosquitos no estágio adulto por controle químico\\
+	$\iota_{cm}$	& taxa de inviabilidade dos mosquitos na fase aquática por controle mecânico\\
+\\
+% Contato
+	$\varsigma_{h \rightarrow v} $ 	& taxa de contato entre humanos infectantes e mosquitos suscetíveis\\
+	$\varsigma_{v \rightarrow h} $ 	& taxa de contato entre mosquitos infectantes e humanos suscetíveis\\
+\\
+% Visita | Vizinhos | Paul Pierre Lévy: http://translate.google.com/#fr|pt|Paul%20Pierre%20L%C3%A9vy
+	$\varrho^{q}_{\bar{q}} $ & fator de conecto-mobilidade entre as quadras $q$ e $\bar{q}$\\ %pela distribuição de Lévy
+
+% Densidades
+%	$V$	 	& densidade média da população de mosquitos\\
+%	$H$	 	& Densidade média da população de humanos\\
+%	$Iv/V $ & densidade de mosquitos infectantes por densidade média da população\\
+
+\end{tabular}
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Sumário}
+\tableofcontents

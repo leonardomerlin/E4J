@@ -1,0 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Dedicatória
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\fontsize{14}{14}
+\textbf{DEDICATÓRIA}
+\end{center}
+
+\vspace{10cm}
+
+\begin{flushright}
+\begin{minipage}[10cm] {8.5cm}
+\emph {Dedico este trabalho aos meus pais, Anely de Moraes Pereira Merlin e Oscar José Merlin, e aos meus irmãos, Oscar José Merlin Júnior, Alinne de Moraes Pereira Leite e Francisco de Moraes Pereira Leite.}
+\end{minipage}
+\end{flushright}

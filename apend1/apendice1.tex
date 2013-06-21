@@ -1,0 +1,172 @@
+%============================================================
+
+\chapter{Como Fazer as Referências Bibliográficas no Latex}
+\label{ApendiceRef}
+
+
+Neste apêndice, mostraremos como as referências bibliográficas devem ser feitas em Latex. Basta decidir a qual tipo sua referência pertence (artigo em anais, livros, teses, dissertações, ...) e preencher os campos adequados para cada tipo. Os campos que estão com a identificação em letras maiúsculas são obrigatórios. Os demais, se você tiver as informações, melhor; se não tiver, basta retirá-lo do tipo.
+
+Para cada referência, preencha um. Abaixo, um exemplo de cada referência.
+
+\begin{description}
+	\item[Em artigos em revistas \cite{ArtigoRevista}]:
+		\small
+		\begin{verbatim}
+			@ARTICLE{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  		  AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  		  TITLE = {Título do Artigo},
+  		  JOURNAL = {Nome da revista em que o artigo foi publicado},
+  		  YEAR = {Ano},
+  		  volume = {Volume},
+  		  number = {Número},
+  		  pages = {pp.inicial-pp.final},
+  		  month = {Mês},
+  		  address = {Local},
+			}
+		\end{verbatim}
+
+	\item[Em livros \cite{Livros}]:
+		\small
+		\begin{verbatim}
+			@BOOK{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			editor = {Quem organizou o livro},
+  			TITLE = {Título do livro},
+  			PUBLISHER = {Editora},
+  			YEAR = {Ano},
+  			volume = {Volume},
+  			number = {Número},
+  			series = {Série a qual o livro pertence},
+  			address = {Local},
+  			edition = {Número da edição},
+  			month = {mês},
+			}
+		\end{verbatim}
+
+	\item[Capítulos em Livros \cite{CapituloLivro}]:
+		\small
+		\begin{verbatim}
+			@INBOOK{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			editor = {Quem organizou o livro},
+  			TITLE = {Título do Livro},
+  			CHAPTER = {Título do Capítulo},
+  			pages = {pp.inicial-pp.final},
+  			PUBLISHER = {Editora},
+  			YEAR = {Ano},
+  			volume = {Volume},	
+  			number = {Número},
+  			series = {Série a qual o livro pertence},
+  			type = {Tipo. Capítulo ou Artigo},
+  			address = {Local},
+  			edition = {Número da edição},
+  			month = {Mês},
+			}
+		\end{verbatim}
+		
+	\item[Artigo em anais \cite{ArtigoAnais}]:
+		\small
+		\begin{verbatim}
+			@INPROCEEDINGS{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			TITLE = {Título do Artigo publicado},
+  			BOOKTITLE = {Título do livro de anais},
+  			YEAR = {Ano},
+  			editor = {Quem organizou os anais},
+  			volume = {Volume},
+  			number = {Número},
+  			series = {Série a qual os anais pertencem},
+  			pages = {pp.inicial-pp.final},
+  			address = {Local},	
+  			month = {Mês},
+  			organization = {Quem organizou o evento},
+  			publisher = {Editora},
+			}
+		\end{verbatim}
+
+	\item[Manual de SW, procedimentos, etc \cite{Manual}]:
+		\small
+		\begin{verbatim}
+			@MANUAL{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			TITLE = {Título do manual},
+  			author = {Nome Completo do autor1 and Nome Completo do autor2},
+  			organization = {Empresa e/ou outro},
+  			address = {Local},
+  			edition = {Número da edição},
+  			month = {Mês},
+  			year = {Ano},
+			}
+		\end{verbatim}
+
+	\item[Relatório técnico \cite{RelatorioTecnico}]:
+		\small
+		\begin{verbatim}
+			@TECHREPORT{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			TITLE =  {Título do Relatório técnico},
+  			INSTITUTION =  {Institução (empresa, universidade, faculdade, ...)
+  			onde o relatório foi feito},
+  			YEAR = {Ano},
+  			type = {Semestral/anual/final},
+  			number = {Número},
+  			address = {Local},
+  			month = {Mês},
+			}
+		\end{verbatim}
+
+	\item[Tese de Doutorado \cite{Tese}]:
+		\small
+		\begin{verbatim}
+			@PHDTHESIS{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			TITLE = {Título da Tese},
+  			SCHOOL = {Universidade},
+  			YEAR = {Ano},
+  			type = {Tipo. Tese},
+  			address = {Local},
+  			month = {Mês},
+			}
+		\end{verbatim}
+
+	\item[Dissertação de mestrado ou monografia de fim de curso \cite{DissertacaoMonografia}]:
+		\small
+		\begin{verbatim}
+			@MASTERSTHESIS{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			TITLE = {Título da Dissertação/Monografia},
+  			SCHOOL = {Universidade/Faculdade},
+  			YEAR = {Ano},
+  			type = {Tipo. Dissertação ou Monografia},
+  			address = {Local},
+  			month = {Mês},
+			}
+		\end{verbatim}
+
+	\item[Referências que não se encaixam em nada \cite{Miscelania}]:
+		\small
+		\begin{verbatim}
+			@MISC{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			author = {Nome Completo do autor1 and Nome Completo do autor2},
+  			title = {Título da referência},
+  			howpublished = {Onde foi publicado. Se Internet, colocar: Consultado
+  			na Internet em: dd/mm/aaaa},
+  			year = {Ano},
+  			month = {Mês},
+  			note = {alguma nota},
+			}
+		\end{verbatim}
+
+	\item[Alguma referência que ainda não foi publicada \cite{NaoPublicado}]: Pode ser também algo que não será publicado, mas que foi apresentado publicamente, por exemplo, um seminário/ trabalho de disciplina.
+		\small
+		\begin{verbatim}
+			@UNPUBLISHED{ComoVoceIraReferenciarNoTextoEstaReferencia,
+  			AUTHOR = {Nome Completo do autor1 and Nome Completo do autor2},
+  			TITLE = {Título da referência},
+  			NOTE = {alguma nota - por exemplo, onde e quando
+  			será publicado},
+  			year = {Ano},
+  			month = {Mês},
+			}
+		\end{verbatim}
+\end{description}
+

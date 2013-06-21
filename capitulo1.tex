@@ -1,0 +1,244 @@
+% Capítulo 1
+\chapter{Introdução}
+    \label{cap:introducao}
+        % intro
+            Este primeiro capítulo tem como objetivo a apresentação geral do trabalho.
+            É realizada a contextualização e delimitação da pesquisa ao escopo da Engenharia de Software,
+            bem como
+            são destacados os principais objetivos da proposta.
+        % topicos
+            % contexto <#ID_883627655>
+                Apresenta-se inicialmente,
+                na seção \ref{cap:introducao:sec:contexto},
+                o contexto sobre as ferramentas de modelagem organizacional e suas contribuições na área da Engenharia de Requisitos, destacando a influência dessas ferramentas no desenvolvimento de produtos de qualidade.
+            % motivacao <#ID_828369918>
+                Na seção \ref{cap:introducao:sec:motivacao}, são apresentadas as principais influências e motivações para a realização do trabalho.
+            % proposta <#ID_1542036198>
+                Em seguida,
+                na seção \ref{cap:introducao:sec:proposta},
+                é apresentada a proposta sob uma visão geral e os objetivos norteadores da pesquisa.
+            % contribuicoes <#ID_1701692394>
+                Na seção \ref{cap:introducao:sec:contribuicoes},
+                 descreve-se as contribuições esperadas após a finalização deste trabalho.
+            % organizacao <#ID_1115413878>
+                Por fim,
+                 na seção \ref{cap:introducao:sec:organizacao},
+                é apresentada a estrutura geral e a organização do restante desta monografia.
+    \section{Contexto}
+        \label{cap:introducao:sec:contexto}
+        % backlink - resumo <#ID_1358290520>
+        % Contexto - Ferramentas
+            Muitas são as opções de ferramentas e técnincas para engenheiros de requisitos
+            que visam auxiliar na construção de modelos organizacionais i*
+                % Site i* Wiki
+                \cite{site2013iwiki}
+                %A Comparative Analysis of i*Agent-Oriented Modelling Techniques
+                \cite{grau2006comparative}.
+            Essas ferramentas, normalmente do tipo CASE (do inglês, \emph{Computer-Aided Software Engineer})
+                \footnote{Ferramentas CASE, é toda e qualquer ferramenta baseada em computador que auxilie nas atividades de desenvolvimento de software.}
+                 \cite{case1985computer}
+            têm por objetivo tanto o aumento da produtividade nos processos da Engenharia de Software quanto a melhoria da qualidade final dos softwares.
+        % Contexto - E.R.
+
+            A área de Engenharia de Requisitos (ER),
+            subárea da Engenharia de Software e responsável por diversas atividades que abrangem os processos de análise, elicitação, especificação, avaliação, ajuste, documentação e evolução dos requisitos de um sistema computacional,
+            é vista como uma das mais críticas para o sucesso e qualidade de um projeto de software
+                %Engnharia de Requisitos
+                \cite{sommerville1998requirements}.
+            Pesquisas pertinentes à ER, tanto em âmbito acadêmico quanto industrial,
+            apontam a falta de um entendimento adequado da organização por parte dos responsáveis pela elaboração do documento de requisitos
+            como sendo uma das principais falhas no processo de especificação dos requisitos
+                % refs
+                    \cite{van2000requirements}.
+        % Contexto - solução: modelagem organizacional
+
+            % intro
+                Para tentar diminuir os problemas relacionados as fases iniciais do projeto,
+                pesquisas recentes mostram que a comunidade tem buscado estabelecer e utilizar padrões de técnicas, métodos e ferramentas para tratar especificamente
+                da fase inicial de desenvolvimento de software
+                    % ref
+                        % A Literature Survey on International Standards for Systems Requirements Engineering
+                        \cite{schneider2013literature}.
+                Pensando nisso,
+                têm-se investido esforços no processo de modelagem organizacional.
+            % conceito
+                Este tipo de modelagem
+                visa prover recursos que permitam modelar
+                as intenções, relacionamentos e motivações
+                entre membros de uma organização
+                % refs
+                    % A Conceptual Basis for Organizational Modelling
+                    % mason1997conceptual <workspace:/../../../../E:/unioeste/BCC/TCC-2013/referencias/mason1997conceptual.pdf>
+                    \cite{mason1997conceptual}.
+            % modelagem i*
+                Dentre as técnicas de modelagem organizacional,
+                destaca-se a i*,
+                proposto por
+                    \cite{yu1993modeling},
+                uma técnica que utiliza a orientação a agentes
+                    \cite{yu2001agent}
+                %
+                    com enfoque
+                    tanto nos desejos e intenções desses agentes, quanto suas dependências
+                    %refs
+                        \cite{site2013iwiki}
+                        \cite{yu1997towards}.
+                Mais detalhes sobre esta técnica e suas variações serão discutidos no capítulo
+                \ref{cap:framework}.
+        % Contexto - Mapeamento Modelagem / UseCase UML
+
+            Pensando em auxiliar no processo de desenvolvimento de software,
+            alguns trabalhos foram propostos com o intuito de realizar o mapeamento
+            de modelos do \emph{framework} i*
+            para diagramas da UML (do inglês \emph{Unified   Modeling   Language}).
+            Dentre esses trabalhos, destaca-se o trabalho de Santander \cite{santander2002integrando},
+            que propõe a derivação em casos de uso UML a partir de modelos do \emph{framework} i*.
+        % Contexto - JGOOSE
+            % intro
+                Para apoiar esse processo de derivação,
+                foi desenvolvida a ferramenta JGOOSE (Java Goal Into Object Oriented Standard Extension).
+                Inicialmente apresentada como GOOSE em
+                    \cite{pedroza2004ferramentas}
+                    e
+                    \cite{brischke2005desenvolvimento},
+                em seguida, melhorada e apresentada como JGOOSE por
+                    \cite{vicente2009},
+                passou também por melhorias com
+                    \cite{brischke2012melhorando}
+                e, atualmente,
+                está sendo aprimorada por
+                    \cite{peliser2013aprimorando}.
+                Consiste numa ferramenta que, seguindo algumas diretrizes e passos, mapeia de forma automática os diagramas i* para casos de uso UML.
+                Ou seja, dado como entrada os modelos i*, no formato de arquivo TELOS
+                    \cite{mylopoulos1990telos}
+                    \cite{koubarakis1989telos},
+                a ferramenta consegue gerar conforme o template proposto em
+                    %ref
+                    \cite{cockburn2001writing}
+                os casos de uso UML com um bom nível de detalhamento.
+            % problema 1 - dependência
+
+                Porém, a ferramenta JGOOSE ainda não possui funcionalidades para a produção dos arquivos de entrada da ferramenta.
+                Ainda existe a dependência da ferramenta OME ou, mais especificamente, ao formato de arquivo TELOS.
+            % solução 1 - editor integrado
+                Nesse contexto, percebe-se a necessidade de se desenvolver um editor de modelos i* integrado à ferramenta JGOOSE,
+            % solução 2 - iStarML
+                bem como implementar o suporte à especificação do formato de arquivo iStarML
+                    % referenciar a proposta inicial do istarml
+                    \cite{cares2007istarml},
+                uma formato em XML
+                para representação de modelos i*
+                com o propósito de servir como um intercâmbio entre os outros meta-modelos existentes
+                    \cite{colomer2011model}.
+    \section{Motivação}
+        \label{cap:introducao:sec:motivacao}
+        % backlink - resumo <#ID_1432075869>
+        % O que me motivou?
+            % Motivo, Causa, Razão ou Circunstância
+            % É uma área em crescimento e destaque. Muito esforço já se investiu em ferramentas CASE.
+            % PQ é valido o esforço para aprimorar a ferramenta?
+        % Motivacional 0 - Resolver algum dos Problemas mencionados no contexto
+            % JGOOSE não possui um editor i*
+            % Dependência de outras ferramentas p/ ler Telos
+            % iStarML
+        % Motivacional 1 - Ajudar a comunidade
+            A área de Engenharia de Requisitos está em crescimento e destaque
+            por impactar de forma tão significativa nos resultados finais de um projeto de software.
+            Desta forma,
+            é valido o investimento de esforços para a melhoria de métodos, técnicas ou ferramentas que auxiliem os profissionais da área a aprimorar seu trabalho de forma eficiente.
+            % framework i*
+                % padrão internacional
+                    O i* é a base da GRL (\emph{Goal-oriented Requirements Language} ou Linguagem de Requisitos Orientada a Objetivos),
+                    que junto à UCM
+                        \footnote{UCM - \emph{Use Case Maps} , em português: "Mapas de Caso de Uso". Uma técnica de engenharia de software baseada em cenários para descrever relacionamentos entre um ou mais casos de uso.}
+                    constituíram a URN
+                        \footnote{URN - \emph{User Requirements Notation}, em portugês: "Notação Requisitos de Usuário". Notação destinada a elicitação, análise, especificação e validação de requisitos.},
+                    que passou a ser adotada como um padrão internacional,
+                    em novembro de 2008,
+                    pela ITU (\emph{International Telecommunication Union})
+                    % Z.151 : User Requirements Notation (URN) - Language definition
+                    % refs
+                        \cite{amyot2003introduction}
+                        \cite{itu2003urn}. % http://www.itu.int/rec/T-REC-Z.151/en
+                % motivação
+                    Além de se tratar de um padrão internacional,
+                    é a técnica de modelagem já justificada pela JGOOSE
+                    e seus usuários já estão familiarizados com os conceitos do \emph{framework}.
+        % Motivacional 2 - Ajudar os alunos
+
+            Além disso,
+            a ferramenta de que trata este trabalho
+            é frequentemente usada por acadêmicos do curso de Ciência da Computação da Universidade Estadual do Oeste do Paraná - Campus Cascavel.
+            Todos os anos, alunos se debatem com problemas apresentados por outros softwares de modelagem i*.
+            Os questionamentos mais comuns estão relacionados à usabilidade e integridade das ferramentas.
+            Isso acarreta em oportunidades para novas soluções computacionais se apresentarem.
+        % Motivacional 3 - Estudar sobre a área
+
+            Outro fator, não menos importante,
+            é o gosto pessoal pela área de projeto e desenvolvimento de software.
+            Isto ajudou na tomada de decisão quanto ao foco da pesquisa, bem como resultou na implementação de uma API para o iStarML (Veja o apêndice \ref{apendice:istarml}).
+    \section{Proposta}
+        \label{cap:introducao:sec:proposta}
+        % backlink - resumo <#ID_1921781916>
+        % intro JGOOSE
+            A ferramenta JGOOSE,
+            no escopo do seu propósito,
+            já atende as principais necessidades do engenheiro de requisitos.
+            Porém, ainda existe a dependência da ferramenta mencionada (OME)
+            para elaborar os modelos organizacionais e exportá-los em arquivo TELOS.
+        % estender JGOOSE (Obj. Geral)
+
+            Dessa forma, o objetivo geral deste trabalho
+            consiste em
+            aumentar os recursos e funcionalidades da ferramenta JGOOSE através do
+            desenvolvimento de uma nova interface
+            para edição de modelos do framework i*
+            integrada ao JGOOSE.
+            Ou seja, prover aos usuários da ferramenta JGOOSE uma interface gráfica rica em recursos que facilitem o trabalho de modelagem organizacional, visando diminuir a necessidade de usar outros softwares para esse fim.
+        %Objetivos Específicos
+            
+             Como objetivos específicos, têm-se:
+            \begin{itemize}
+            % estudar literatura da área
+                \item
+                Estudar sobre as ferramentas de modelagem organizacional i* disponíveis à comunidade.
+            % estudar sobre o framework i* e suas variações
+                \item
+                Estudar sobre o framework i*, bem como suas variações.
+            % estudar a iStarML
+                \item
+                Estudar o formato de arquivo iStarML e incorporá-lo à ferramenta como o formato de arquivo padrão.
+            % estudar o JGOOSE e sua evolução/histórico
+                \item
+                Realizar um estudo sobre a evolução histórica da ferramenta JGOOSE e analisar sua arquitetura na versão 2013.
+            % realizar um estudo de caso com a ferramenta
+                \item
+                Realizar um estudo de caso, usando a ferramenta proposta, a fim de validar as principais funcionalidades da ferramenta na versão final.
+            \end{itemize}
+    \section{Contribuições Esperadas}
+        \label{cap:introducao:sec:contribuicoes}
+        % backlink - resumo <#ID_491307769>
+        Após a finalização deste trabalho, deseja-se
+        % Ferramenta
+            % elimitar ou diminuir a dependência de outras ferramentas
+            uma maior independência para a JGOOSE e, consequentemente, seus usuários,
+            % Maior facilidade no uso da ferramenta JGOOSE NOOP
+            além de aumentar o destaque na comunidade e promover a adoção da ferramenta para fins de modelagem i*.
+        % Eng de Requisitos
+            % melhor rastreamento dos requisitos ?
+        % Reconhecimento
+            % Comunidade i* - i* wiki
+            Por fim, espera-se uma contribuição significativa diante das ferramentas da comunidade i*,
+            trazendo um reconhecimento para o grupo de pesquisa do LES e todos os envolvidos no desenvolvimento e progresso da JGOOSE.
+            Além disso, seria uma nova ferramenta no quadro comparativo do i* Wiki \cite{site2013iwiki}.
+    \section{Estrutura do Trabalho}
+        \label{cap:introducao:sec:organizacao}
+        Basicamente,
+        o restante deste trabalho encontra-se organizado da seguinte maneira:
+            Nos capítulos \ref{cap:framework} e \ref{cap:jgoose} são apresentados alguns fundamentos teóricos necessários para uma melhor compreensão da área de estudo de que trata este trabalho.  No capítulo \ref{cap:framework}, os conceitos básicos e as características do \emph{Framework} i*, bem como suas variações, são apresentados.  Já no capítulo \ref{cap:jgoose}, após um estudo sobre a evolução histórica do software JGOOSE, uma análise e discussão detalhada de sua arquitetura, na versão 2013, é realizada.
+            No capítulo \ref{cap:proposta}, a proposta é detalhada através de uma visão geral do projeto e arquitetura da nova interface. Também é apresentada uma discussão sobre os principais recursos disponíveis aos usuários.
+            Em seguida, no capítulo \ref{cap:estudo-de-caso} é apresentado um estudo de caso, mostrando e avaliando a aplicação da ferramenta em um domínio específico.
+            Finalmente, o capítulo \ref{cap:conclusao} reúne as análises e considerações finais sobre os resultados, bem como relata sobre os possíveis trabalhos futuros.
+
+        Outra composição importante, do ponto de vista técnico-computacional, é o apêndice \ref{apendice:istarml}: uma documentação sobre a API desenvolvida durante a fase de implementação.
+        

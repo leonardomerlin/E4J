@@ -1,0 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Dedicatória
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+%\fontsize{14}{14}
+%\textbf{EPÍGRAFE}
+%\end{center}
+
+\vspace{10cm}
+
+\begin{flushright}
+\begin{minipage}[10cm] {8.5cm}
+
+  \emph {
+	"Se você pensa que pode ou se pensa que não pode, de qualquer forma você está certo."
+	\\Henry Ford
+	\\
+	\\"Um raciocínio lógico leva você de A a B. Imaginação leva você a qualquer lugar que você quiser."
+	\\Albert Einstein}
+
+\end{minipage}
+\end{flushright}
