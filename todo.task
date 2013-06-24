@@ -1,0 +1,83 @@
+Apresentação:
+	☐ Conhecer bem as diretrizes do i wiki! muita coisa boa!
+		☐ "Progressive elaboration" -  comece seu SD assim:
+			☐ 1. atores
+			☐ 2. dependencias na ordem: 
+				☐ 1. recursos
+				☐ 2. tarefas
+				☐ 3. objetivos
+				☐ 4. objetivos-soft
+
+			Guideline4.7.2.1_3 - http://istar.rwth-aachen.de/tiki-index.php?page=Guideline+%28Beginner%2CMethodology%29+Start+an+SD+model+with+the+actors%2C+then+add+Dependency+Links+%28Resources%2C+Tasks%2C+Goals%2C+then+Softgoals%29+consecutively.&structure=i%2A+Guide
+
+
+# REVISÃO:
+	☐ lista de imagens
+		☐ referências: possui referencias certas? qual a origem das imagens?
+		☐ legenda: possui legendas duplicadas ou mal escritas?
+
+	☐ Tabela de abreviaturas e símbolos
+		☐ A abreviatura condiz com a descrição?
+			☐ As em inglês, estão em itálico?
+		☐ Foram usadas todas as abreviaturas?
+		☐ Existe alguma abreviatura que está no texto mas não na tabela?
+		
+	☐ Estudo de Caso - não usar este termo em nenhuma parte do texto @ivonei @elder
+
+# PRÉVIA:
+	☐ falar mais sobre as ferramentas CASE - como elas 'aumentam a produtividade' e 'melhoram a qualidade'?
+	☐ Detalhes da apresentação que devem ir para o documento
+	☐ Arrumar imagens no photoshop (recorte, ruídos e bordas )
+
+# TODO:
+	☐ citar grando2010
+	☐ falar sobre o guia i* - propósito: educação e colaboração. http://istar.rwth-aachen.de/tiki-index.php?page=Purpose&structure=i%2A+Guide
+
+
+# ANOTAÇÕES:
+	Framework i*:
+		☐ Usar exemplos de Elementos (Nodos), Ligações (Arestas) e SD, SR do i* wiki e referenciar.
+		☐ Quando exemplificar Agentes (e associações entre agentes), exemplificar sub-sistemas! @bom-exemplo
+
+		Exemplos:
+
+			Ator - Genérico:
+				☐ Editor i* - quando ainda não se sabe (ou não é necessário) especificar qual sistema será!
+					"Exemplo: Editor i* - podendo ser qualquer um!"
+
+				Agente:
+					☐ E4J - um sistema específico para editor i*
+
+	Requisitos Iniciais:
+		☐ Formulário?
+		☐ Coleta de informações
+		☐ modelo organizacional!
+		
+	Ferramentas:
+		☐ Quais estão "ativas" ?
+		☐ Quais estão "mortas" ?
+
+	iStarML:
+		☐ Citar o mapeador telos => istarML do site!
+		☐ Referências de USO:
+			☐ artigo "prova de conceito"
+		☐ Quais ferramentas tem pretenção de adotar o istarml? @referenciar
+			☐ iStarTool ?
+			☐ OpenOME ?
+			☐ ???
+		☐ Solução ccistarml
+			☐ Problemas:
+				☐ AFD - Autômato Finito Determinístico
+
+		JABX:
+			☐ Como implementei/mapeei o iStarML (Diagrama de Classes)
+			☐ Marshal / Unmarshall - Serialização
+
+	JGRAPH:
+		☐ O que é?
+			☐ Estrutura...
+		☐ O que ela fornece?
+			☐ features
+		☐ O que precisei fazer de fato?
+			☐ refatoração
+			☐ implementação

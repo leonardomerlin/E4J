@@ -1,0 +1,6 @@
+# GUIDELINES
+
+Guideline (Beginner,Concept)
+	Use 'ISA' and "Is part of' Association Links only between actors of the same type.
+	Output: "X and Y são atores sociais autonomos de diferentes tipos. A ligação correta entre esses tipos é 'Z'."
+

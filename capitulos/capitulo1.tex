@@ -26,32 +26,22 @@
                 é apresentada a estrutura geral e a organização do restante desta monografia.
     \section{Contexto}
         \label{cap:introducao:sec:contexto}
-        % backlink - resumo <#ID_1358290520>
         % Contexto - Ferramentas
-            Muitas são as opções de ferramentas e técnincas para engenheiros de requisitos
-            que visam auxiliar na construção de modelos organizacionais i*
-                % Site i* Wiki
-                \cite{site2013iwiki}
-                %A Comparative Analysis of i*Agent-Oriented Modelling Techniques
-                \cite{grau2006comparative}.
-            Essas ferramentas, normalmente do tipo CASE (do inglês, \emph{Computer-Aided Software Engineer})
+            Muitas são as opções de ferramentas e técnincas que visam auxiliar engenheiros de requisitos no processo de construção de modelos organizacionais i* \cite{site2013iwiki} \cite{grau2006comparative}.
+            Podendo ser classificadas como ferramentas CASE (\emph{Computer-Aided Software Engineer})
                 \footnote{Ferramentas CASE, é toda e qualquer ferramenta baseada em computador que auxilie nas atividades de desenvolvimento de software.}
-                 \cite{case1985computer}
-            têm por objetivo tanto o aumento da produtividade nos processos da Engenharia de Software quanto a melhoria da qualidade final dos softwares.
+             \cite{case1985computer}, essas ferramentas têm como objetivo o aumento da produtividade e a melhoria da qualidade final dos softwares,
+                 através da automatização e gerenciamento de várias fases da Engenharia de Software.
+        
         % Contexto - E.R.
-
-            A área de Engenharia de Requisitos (ER),
-            subárea da Engenharia de Software e responsável por diversas atividades que abrangem os processos de análise, elicitação, especificação, avaliação, ajuste, documentação e evolução dos requisitos de um sistema computacional,
-            é vista como uma das mais críticas para o sucesso e qualidade de um projeto de software
-                %Engnharia de Requisitos
-                \cite{sommerville1998requirements}.
+            A área de Engenharia de Requisitos (ER), subárea da Engenharia de Software, é responsável por diversas atividades que abrangem os processos de análise, elicitação, especificação, avaliação, ajuste, documentação e evolução dos requisitos de um sistema computacional.
+            É uma das áreas mais críticas para o sucesso e qualidade de um projeto de software \cite{sommerville1998requirements}.
             Pesquisas pertinentes à ER, tanto em âmbito acadêmico quanto industrial,
             apontam a falta de um entendimento adequado da organização por parte dos responsáveis pela elaboração do documento de requisitos
             como sendo uma das principais falhas no processo de especificação dos requisitos
-                % refs
-                    \cite{van2000requirements}.
-        % Contexto - solução: modelagem organizacional
+                \cite{van2000requirements}.
 
+        % Contexto - solução: modelagem organizacional
             % intro
                 Para tentar diminuir os problemas relacionados as fases iniciais do projeto,
                 pesquisas recentes mostram que a comunidade tem buscado estabelecer e utilizar padrões de técnicas, métodos e ferramentas para tratar especificamente
@@ -96,8 +86,12 @@
         % Contexto - JGOOSE
             % intro
                 Para apoiar esse processo de derivação,
-                foi desenvolvida a ferramenta JGOOSE (Java Goal Into Object Oriented Standard Extension).
-                Inicialmente apresentada como GOOSE em
+                foi desenvolvida a ferramenta JGOOSE (Java Goal into Object Oriented Standard Extension) \cite{vicente2006},
+                uma ferramenta que mapeia de forma automática os diagramas i* para casos de uso UML.
+                Essa ferramenta tem como base as diretrizes e passos propostos por Santander \cite{santander2002integrando},
+
+
+                Inicialmente apresentada como GOOSE (\emph{Goal into Object Oriented Standard Extension}) em
                     \cite{pedroza2004ferramentas}
                     e
                     \cite{brischke2005desenvolvimento},
@@ -108,7 +102,7 @@
                 e, atualmente,
                 está sendo aprimorada por
                     \cite{peliser2013aprimorando}.
-                Consiste numa ferramenta que, seguindo algumas diretrizes e passos, mapeia de forma automática os diagramas i* para casos de uso UML.
+
                 Ou seja, dado como entrada os modelos i*, no formato de arquivo TELOS
                     \cite{mylopoulos1990telos}
                     \cite{koubarakis1989telos},
@@ -150,9 +144,9 @@
                 % padrão internacional
                     O i* é a base da GRL (\emph{Goal-oriented Requirements Language} ou Linguagem de Requisitos Orientada a Objetivos),
                     que junto à UCM
-                        \footnote{UCM - \emph{Use Case Maps} , em português: "Mapas de Caso de Uso". Uma técnica de engenharia de software baseada em cenários para descrever relacionamentos entre um ou mais casos de uso.}
+                        \footnote{UCM - \emph{Use Case Maps} , em português: ``Mapas de Caso de Uso''. Uma técnica de engenharia de software baseada em cenários para descrever relacionamentos entre um ou mais casos de uso.}
                     constituíram a URN
-                        \footnote{URN - \emph{User Requirements Notation}, em portugês: "Notação Requisitos de Usuário". Notação destinada a elicitação, análise, especificação e validação de requisitos.},
+                        \footnote{URN - \emph{User Requirements Notation}, em portugês: ``Notação Requisitos de Usuário''. Notação destinada a elicitação, análise, especificação e validação de requisitos.},
                     que passou a ser adotada como um padrão internacional,
                     em novembro de 2008,
                     pela ITU (\emph{International Telecommunication Union})
@@ -188,32 +182,24 @@
             para elaborar os modelos organizacionais e exportá-los em arquivo TELOS.
         % estender JGOOSE (Obj. Geral)
 
-            Dessa forma, o objetivo geral deste trabalho
-            consiste em
+            Dessa forma, o objetivo geral deste trabalho consiste em
             aumentar os recursos e funcionalidades da ferramenta JGOOSE através do
-            desenvolvimento de uma nova interface
-            para edição de modelos do framework i*
-            integrada ao JGOOSE.
+            desenvolvimento de uma nova interface para edição de modelos do framework i* integrada à JGOOSE.
             Ou seja, prover aos usuários da ferramenta JGOOSE uma interface gráfica rica em recursos que facilitem o trabalho de modelagem organizacional, visando diminuir a necessidade de usar outros softwares para esse fim.
         %Objetivos Específicos
             
              Como objetivos específicos, têm-se:
             \begin{itemize}
             % estudar literatura da área
-                \item
-                Estudar sobre as ferramentas de modelagem organizacional i* disponíveis à comunidade.
+                \item Estudar sobre as ferramentas de modelagem organizacional i* disponíveis à comunidade.
             % estudar sobre o framework i* e suas variações
-                \item
-                Estudar sobre o framework i*, bem como suas variações.
+                \item Estudar sobre o framework i*, bem como suas variações.
             % estudar a iStarML
-                \item
-                Estudar o formato de arquivo iStarML e incorporá-lo à ferramenta como o formato de arquivo padrão.
-            % estudar o JGOOSE e sua evolução/histórico
-                \item
-                Realizar um estudo sobre a evolução histórica da ferramenta JGOOSE e analisar sua arquitetura na versão 2013.
-            % realizar um estudo de caso com a ferramenta
-                \item
-                Realizar um estudo de caso, usando a ferramenta proposta, a fim de validar as principais funcionalidades da ferramenta na versão final.
+                \item Estudar o formato de arquivo iStarML e incorporá-lo à ferramenta como o formato de arquivo padrão.
+            % estudar a JGOOSE e sua evolução/histórico
+                \item Realizar um estudo sobre a evolução histórica da ferramenta JGOOSE e analisar sua arquitetura na versão 2013.
+            % criar e apresentar exemplos de uso da ferramenta
+                \item Criar e apresentar exemplos de uso da ferramenta proposta, a fim de verificar as principais funcionalidades da ferramenta na versão final.
             \end{itemize}
     \section{Contribuições Esperadas}
         \label{cap:introducao:sec:contribuicoes}

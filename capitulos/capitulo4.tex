@@ -1,55 +1,136 @@
-\chapter{Proposta}
+% 
+% Escolhas e JUSTIFICATIVAS!?
+% 
+\chapter{E4J - Editor i* para JGOOSE}
     \label{cap:proposta}
     % intro
-        % Neste capítulo, ...
-    % retoma a "chamada" do Cap 1 ?!
+        Este capítulo apresenta a solução computacional \ferramenta{}, um editor de modelos organizacionais i* integrado à ferramenta JGOOSE.
+
+        Para a apresentação desta proposta, este capítulo foi dividido nas seguintes seções:
+            \begin{itemize}
+                \item ... % TODO
+            \end{itemize}
+    % [end]
 
     \section{Visão Geral}
         \label{cap:proposta-sec:overview}
         % tópico - intro
-        \subsection{Conceitos e Considerações Iniciais}
-            % tópico
+
+        % nesse sentido,
+        %   adotou-se 
+        A E4J (pronunciado ``i-fór-jey''), representa a abreviação de ``Editor para JGOOSE'', mais especificamente: \textbf{E}ditor i* \textbf{para} \textbf{J}GOOSE.
+
+
+        Para se usar com efetividade a \ferramenta{},
+            é necessário conhecer os conceitos originais da modelagem organizacional i* propostos por Yu \cite{yu1995modelling}, vistos no capítulo \ref{cap:framework} deste trabalho.
+            Também é necessário conhecer o funcionamento da ferramenta JGOOSE, visto no capítulo \ref{cap:jgoose}, para entender o mapeamento dos casos de uso UML.
+
+        % \subsection{Considerações Técnicas}
+        %     A E4J foi desenvolvida na linguagem de programação JAVA \cite{java}.
+        %         % A JGOOSE ja é java,
+        %         % ...
+        %         % vantagens e beneficios de se manter a Linguagem JAVA
+
+        \subsection{JGraphX}
+            A JGraphX é uma Biblioteca para Java Swing (\emph{Java Swing Library}) da \emph{mxGraph} \cite{mxgraph}.
+                Consiste em um conjunto de estruturas e funcionalidades que facilitam a produção de Aplicações Java Swing \cite{javaswing}.
+                Com essa biblioteca é possível criar aplicações interativas voltadas principalmente para manipulação de diagramas.
+
+            O núcleo dessa biblioteca é fundamentada na Teoria dos Grafos \cite{teoria dos grafos}.
+                Um grafo consiste em um conjunto de vertices, chamados também de nodos ou nós, e arestas.
+                As arestas são conexões entre os nós.
+                Na estrutura da JGraphX, existe também o conceito de célula, que representa um elemento do grafo: arestas, vértices ou um grupo destes.
+
+                Essa biblioteca foi escolhida pelos seguintes fatores:
+                    \begin{itemize}
+                        \item é uma biblioteca Java focada em aplicações para manipulação de diagramas sobre a estrutura de grafos. Como os modelos organizacionais i* podem ser construídas sobre estruturas de grafos, este ítem é relativamente significante para a escolha da biblioteca.
+                        \item boa representatividade na comunidade. Essa biblioteca é citada em diversos fóruns da área e, recentemente, foi realizado um estudo comparativo entre a biblioteca JGraphX e a JUNG, ambas soluções para visualização e manipulação de grafos \cite{souza2013analise}. Nesse estudo, segundo os critérios avaliados, a JGraphX apresentou melhores caraterísticas que a JUNG.
+                        \item está sob a licensa BSD \cite{bsd}.
+                        \item é disponibilizada em repositório Maven com boa documentação (JavaDoc) e código-fonte.
+                    \end{itemize}
+    % [end]
+
     \section{Projeto e Arquitetura}
         \label{cap:proposta-sec:design}
-        % tópico - intro
-        \subsection{Modelagem i*}
+        % visões: SD, SR; DFD; Camadas; Componentes;
+            Antes de começar a desenvolver efetivamente a \ferramenta{},
+                foram desenvolvidos alguns modelos que auxiliaram o entendimento das necessidades do software final.
+
+        \subsection{Modelagem Organizacional i*}
             % será usado no projeto de IC
-            % fazer a modelagem em um software qualquer (OpenOME ou OME)
-            % refazer ele no estudo de caso?
-            % Modelos SD e SR
-            % Use Case Gerado...
-        \subsection{Arquitetura Modular}
+            % Ao 
+        \subsection{Diagrama de Fluxo de Dados}
+            % 
+
+        \subsection{Casos de Uso UML}
+            % Gerados pelo JGOOSE ...
+
+        \subsection{Camadas - comunicação ``vertical''}
+
+        \subsection{Arquitetura Modular - Componentes/Subsistemas}
+            \label{cap:proposta-sec:maven} %nao deletar - foi comentado no cap 3!
             % tópico
             % reuso de software: Ivonei
             % linhas de produção: Ivonei
-        \subsection{Maven}
-            % o que é?
-            % como funciona?
-            % como usei?
-            % que resultados obtive
-            % o que esperar?
-    %
+            % Apache Maven - ou apenas Maven, mais detalhes na seção seguinte (\ref{cap:proposta-sec:development})
+        
+            % \subsection{Maven} % modulos, adaptações
+                % o que é?
+                % como funciona?
+                % como usei?
+                % que resultados obtive
+                % o que esperar?
+    % [end]
+
     \section{Desenvolvimento}
         \label{cap:proposta-sec:development}
-        % tópico - intro
-            % introdução
-                % conexão com o tópico anterior
-                % problemas
-                    % atuais
-                    % comuns
-                    % referências de trabalhos recentes
-                % importância do tópico
-                % conceitos importantes
-                    % referências "Clássicas"
-            % desenvolvimento
-                % relação do tópico com o trabalho geral
-                % relação do tópico com outro tópico?
-                % outros trabalhos que já fizeram "essa conexão"
-            % fechamento ou conexão para o tópico seguinte
-        %\subsection{}
-            % tópico
-    %
-    \section{Recursos}
+        % em módulos maven
+
+        O processo de desenvolvimento foi iterativo e incremental, com apresentações ao Grupo LES (Laboratório de Engenharia de Software).
+            Orientado à testes (as vezes)!
+            Metodologia Ágil! (TDD)
+                Escrever 1o. o teste e ver ele falhar. Se não falhar, já tem algo errado. Nesse caso, falhar é um bom sinal! rs
+                Escrever um pedaço de código para passar no teste
+                Refatorar / Melhorar o código com segurança, pois o teste já está feito.
+            [TODO]
+        \subsection{Módulo: JGOOSE}
+            Para melhor adaptação e incorporação da ferramenta JGOOSE ao projeto principal do E4J,
+                foi necessário adaptar o projeto original do JGOOSE à estrutura de projeto Maven.
+        
+        \subsection{Módulo: API iStarML}
+            % - pq n usar o ccistarml?
+                % - JDK5 e código fonte de difícil manutenção (AFD).
+            % - justificativas
+            % O que caracteriza uma API?
+            % O que foi efetivamente desenvolvido?!
+            % Annotations e JAXB
+            Mapeamento das Tags
+                Annotations
+                % JAXB
+                \emph{Java Architecture for XML Binding} (JAXB) é um padrão Java que ajuda a definir como converter objetos java em XML e vice-versa.
+            - restrições da linguagem?
+
+        \subsection{Módulo: Editor}
+            JGraphX - exemplo adaptado! % jgraphx detalhado na secao: visao geral
+            Grafo
+                Nodos
+                Arestas
+            DIA and Shapes...
+
+            Paletas:
+                Atores: ator (e derivados) e links de associação (somente entre atores!)
+                Dependências: goal, resource, task, soft-goal, links
+                Misc?: notes? annotations? docs?
+
+        
+        % \subsection{Módulo: Log}
+        %     O módulo Log funcionou como um
+        \subsection{\emph{Guidelines} i* Wiki?}
+    % [end]
+    
+    \section{Características da Ferramenta}
+        % Alguns recursos presentes na ferramenta merecem uma atenção especial.
+
         % tópico
         \subsection{Internacionalização (i18n)}
             % o que é?
@@ -59,37 +140,33 @@
             % usa padrões de projeto?
         \subsection{UndoManager}
         % \subsection{TODO}
-        \subsection{API iStarML}
-    \section{Testes e Validação}
-        % tópico - intro
-            % introdução
-                % conexão com o tópico anterior
-                % problemas
-                    % atuais
-                    % comuns
-                    % referências de trabalhos recentes
-                % importância do tópico
-                % conceitos importantes
-                    % referências "Clássicas"
-            % desenvolvimento
-                % relação do tópico com o trabalho geral
-                % relação do tópico com outro tópico?
-                % outros trabalhos que já fizeram "essa conexão"
-            % fechamento ou conexão para o tópico seguinte
-        \subsection{Testes Unitários}
-            % tópico
-                % introdução
-                    % conexão com o tópico anterior
-                    % problemas
-                        % atuais
-                        % comuns
-                        % referências de trabalhos recentes
-                    % importância do tópico
-                    % conceitos importantes
-                        % referências "Clássicas"
-                % desenvolvimento
-                    % relação do tópico com o trabalho geral
-                    % relação do tópico com outro tópico?
-                    % outros trabalhos que já fizeram "essa conexão"
-                % fechamento ou conexão para o tópico seguinte
+    % [end]
+
     \section{Considerações Finais do Capítulo}
+        \label{cap:proposta-sec:consideracoes}
+
+        Após a compilação completa da ferramenta (junto com suas dependências),
+            foi gerado um arquivo executável em JAVA (extensão .jar) com apenas
+            ?TODO? megabytes.
+            Um número significativamente pequeno, quando comparado aos valores do \emph{i* wiki}, que variam entre ?TODO? e ?TODO?.
+
+        No próximo capítulo será apresentada a ferramenta desenvolvida através de exemplos de uso ...
+        
+        \subsection{Restrições e Problemas}
+            % Avaliação crítica sobre as limitações da Ferramenta!
+            % (Fazer isso antes que alguém da banca o faça!)
+
+
+        % [end]
+
+        \subsection{Trabalhos Futuros}
+            \begin{itemize}
+                \item 
+                \item Desenvolver outras rotinas de importação e exportação de arquivos no módulo \emph{API iStarML}.
+            \end{itemize}
+        % [end]    
+    % [end]
+
+% bibliography, just for auto-link in sublime text
+% before compile main.tex, comment line below
+\bibliography{../referencias/unioeste,../referencias/tecnologias,../referencias/istar,../referencias/commons,../referencias/books}

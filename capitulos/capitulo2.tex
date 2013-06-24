@@ -18,8 +18,8 @@
         \label{cap:framework-sec:istar}
         % intro
             % o que é ?
-                O framework i* (pronunciado "i-star"
-                        \footnote{O nome i*, pronunciado em inglês "i-star" faz referência ao conceito sobre uma intencionalidade distribuída. No Brasil, são comuns as pronúncias "i-estrela" e "i-star".}),
+                O framework i* (pronunciado ``i-star''
+                        \footnote{O nome i*, pronunciado em inglês ``i-star'' faz referência ao conceito sobre uma intencionalidade distribuída. No Brasil, são comuns as pronúncias ``i-estrela'' e ``i-star''.}),
                     originalmente proposto por Yu \cite{yu1995modelling},
                 é um framework de modelagem organizacional conceitual.
                 Ou seja, ajuda no desenvolvimento de modelos que auxiliam a análise de sistemas sob uma visão estratégica e intencional de processos que envolvem vários participantes.
@@ -79,26 +79,26 @@
                     \begin{figure}[h!]
                         \centering
                             \includegraphics[scale=0.8]{Figuras/istar/atores.jpg}
-                            \caption{Exemplo de relações entre atores}
+                            \caption{Exemplo de relações entre atores \cite{santos2008istar}}
                             \label{fig:atores-exemplo}
                     \end{figure}
 
                     \begin{figure}[h!]
                         \centering
                             \subfigure[fig:ator:a][Ator]{\includegraphics[scale=0.8]{Figuras/istar/ator.jpg}}
-                            \subfigure[fig:ator:b][Ator]{\includegraphics[scale=0.8]{Figuras/istar/ator-agente.jpg}}
-                            \subfigure[fig:ator:c][Ator]{\includegraphics[scale=0.8]{Figuras/istar/ator-posicao.jpg}}
-                            \subfigure[fig:ator:d][Ator]{\includegraphics[scale=0.8]{Figuras/istar/ator-papel.jpg}}
-                            \caption{Notação de Ator (a), Agente (b), Posição (c) e Papel (d).}
+                            \subfigure[fig:ator:b][Agente]{\includegraphics[scale=0.8]{Figuras/istar/ator-agente.jpg}}
+                            \subfigure[fig:ator:c][Posição]{\includegraphics[scale=0.8]{Figuras/istar/ator-posicao.jpg}}
+                            \subfigure[fig:ator:d][Papel]{\includegraphics[scale=0.8]{Figuras/istar/ator-papel.jpg}}
+                            \caption{Atores e especializações.}
                             \label{fig:atores}
                     \end{figure}
                     
                     %
                     \item \textbf{Agente} é a decomposição de um ator que possui manifestações físicas concretas. Refere-se tanto a humanos quanto a agentes de software ou hardware. Um agente possui dependências independentemente do papel que está executando. As características de um agente normalmente não são fáceis de se transferir para outros atores/agentes. São como experiências, habilidades ou, até mesmo, limitações físicas.
                     %
-                    \item \textbf{Papel} é a caracterização abstrata do comportamento de um ator dentro de determinados contextos sociais ou domínio de informação. Essas características devem ser facilmente transferíveis a outro ator social. As dependências associadas a um papel são aplicáveis independentemente do agente que desempenha o papel.
-                    %
                     \item \textbf{Posição} representa uma abstração intermediária entre um agente e um papel. É o conjunto de papéis tipicamente executados por um agente, ou seja, representa uma posição dentro da organização onde o agente pode desempenhar várias funções (papéis). Diz-se que um agente ocupa uma posição e uma posição cobre um papel.
+                    %
+                    \item \textbf{Papel} é a caracterização abstrata do comportamento de um ator dentro de determinados contextos sociais ou domínio de informação. Essas características devem ser facilmente transferíveis a outro ator social. As dependências associadas a um papel são aplicáveis independentemente do agente que desempenha o papel.
                 \end{enumerate}
 
             % actors associations
@@ -157,7 +157,7 @@
             % Links (One side)
             \paragraph{Ligação de dependência}
                 É uma estritamente a conexão entre os elementos de forma direcionada.
-                Assim, pode-se ter somente duas opções de conexão: início no \emph{Depender}, fim no \emph{Dependum} e início no \emph{Dependum} e fim no \emph{Dependee}. Essa conexão é definida por um segmento contínuo, com a letra "D" sobrescrita, e direcionada da origem para o destino (conforme os exemplos da Figura \ref{fig:dependency}).
+                Assim, pode-se ter somente duas opções de conexão: início no \emph{Depender}, fim no \emph{Dependum} e início no \emph{Dependum} e fim no \emph{Dependee}. Essa conexão é definida por um segmento contínuo, com a letra ``D'' sobrescrita, e direcionada da origem para o destino (conforme os exemplos da Figura \ref{fig:dependency}).
                 % Assim, pode-se pensar na seguinte estrutura de nodos e ligações:
                 %     1. \emph{Depender} (nodo); 2. Ligação de dependência (ligação); 3. \emph{Dependum} (nodo); 4. Ligação de dependência (ligação); 5. \emph{Dependee} (nodo).
                 \begin{figure}[h!]
@@ -171,7 +171,7 @@
                         \label{fig:dependency}
                 \end{figure}
                 
-        % [end subsection]
+        % [end]
         \subsection{Modelos de Razões Estratégicas (SR)}
             % SR
                 Já o modelo de Razões Estratégicas(SR)\footnote{SR, do inglês Strategic Rationale},
@@ -179,9 +179,9 @@
                 Com isso, é possível detalhar os interesses, preocupações e motivações específicas de um ator.
                 Esse tipo de modelo também torna possível a avaliação de alteranativas em definições de processos.
 
-                O modelo SR, além de poder conter todos os atores e dependências do SD, "abre-se" os Atores para se detalhar as dependências e expressar as razões.
+                O modelo SR, além de poder conter todos os atores e dependências do SD, ``abre-se'' os Atores para se detalhar as dependências e expressar as razões.
                 Ou seja, para os atores que precisam ser detalhados, é habilitado o limite da fronteira que deve estar visível e com espaço o suficiente para receber os elementos de dependência e/ou ligações internas. 
-                Dessa forma, pode-se pensar nos elementos internos ao ator, ou seja, dentro da área de fronteira, como "pertencentes" ao ator.
+                Dessa forma, pode-se pensar nos elementos internos ao ator, ou seja, dentro da área de fronteira, como ``pertencentes'' ao ator.
                 A seguir, são descritos os demais elementos de um modelo SR.
 
             \paragraph{Fronteira}
@@ -236,27 +236,25 @@
                         \item \textbf{\emph{And}}: é uma contribuição onde o objetivo-soft é satisfeito se todos os descendentes forem satisfeitos.
                     \end{enumerate}
                 
-        % [end subsection]
-        \subsection{iStarML}
-            % intro
-                Muitas ferramentas foram criadas com base nos conceitos do framework i* ou de variações desse \cite{cares2012towards} \cite{cares2011towards}.
-                Isso acabou gerando modelos específicos para cada ferramenta, dificultando o intercâmbio de modelos entre essas ferramentas.
-                Pensando nisso, foi desenvolvida a iStarML.
-                Um meta-modelo baseado em XML (\emph{Extensible Markup Language}) usado para representar modelos i* \cite{cares2008istarml}.
-                
-                O principal objetivo desse meta-modelo é proporcionar um formato de intercâmbio entre os outros formatos de modelos do i*.
-                Ou seja, a especificação iStarML deve suportar todas as outras definições e especificações dos modelos já propostos.
-                Com isso, tudo o que se consegue especificar no formato TELOS, por exemplo, deve-se conseguir também no formato iStarML.
+        % [end]
+        % \subsection{Diretrizes i* Wiki}
+            %     % intro sobre as diretrizes
+            %     No wiki do i* \cite{site2013iwiki} são apresentadas
 
-                Como prova de conceitos, foi realizado um estudo onde se aplicou o iStarML estritamente para fazer a interconexão entre duas ferramentas diferentes \cite{colomer2011model}.
-                Nesse estudo, as ferramentas aplicadas foram jUCMNav \cite{kealey2006integrating} e a HiME \cite{lopez2009hime}.
+            %     % TODO: reescrever
+            %     As diretrizes são classificadas quanto ao nível:
+            %         - iniciante: assume-se que o ?modelador? está tendo o primeiro contato com o framework de modelagem i*.
+            %         - intermediário: 
+            %         - avançado
 
-                Porém, existe a preocupação sobre a real adoção da especificação iStarML. Como exemplo, tem-se a promessa da ferramenta OpenOME, que diz estar trabalhando para implementar rotinas de importação/exportação em iStarML \cite{horkoff2011openome} \cite{laue2011adding}.
+            %     Quanto ao tipo:
+            %         - conceito: esclarece questões sobre os fundamentos do framework
+            %         - nomenclatura: como os atores, liks e elementos devem ser chamados? lida com questoes de cores e icones também.
+            %         - notação: lida com a seleção adequada e uso da notação i* nos elementos, atores e links.
+            %         - layout: lida com a disposição e organização dos modelos i* e o jeito que o conteúdo dos modelos 
 
-                Conforme já mencionado no Capítulo \ref{cap:introducao}, é objetivo dessa pesquisa a implementação e adoção do iStarML como especificação do formato de arquivo padrão. Portanto, detalhes mais específicos sobre a linguagem iStarML serão feitas no Capítulo \ref{cap:proposta}.
-
-        % [end subsection]
-    % [end section]
+        % [end]
+    % [end]
     \section{Variações Baseadas no Framework i*}
         \label{cap:framework-sec:variacoes}
         % ITU-T = GRL + UCM.
@@ -280,7 +278,7 @@
 
         % vários estudos comparativos já foram realizados
             %http://istarwiki.org/tiki-index.php?page=i%2A+Modelling+Techniques&structure=i%2A+Wiki+Home
-        % [end subsection]
+        % [end]
         \subsection{i* Wiki}
             % o que é?
                 O i* Wiki, é um projeto criado com o intuito de reunir trabalhos relativos ao i*, de forma colaborativa
@@ -294,7 +292,7 @@
                     uma versão estável, servindo de referência para os usuários;
                     outra versão aberta a discussão, acessível aos usuários registrados no site e passível de comentários e sugestões individuais.
                 Além disso, o site reúne um conjunto de Estudos de Casos, Publicações e Eventos relacionados a área de i*.
-        % [end subsection]
+        % [end]
 
         \subsection{\emph{Goal-Oriented Requirements Language} (GRL)}
             A GRL é uma linguagem de apoio à modelagem orientada a agentes e objetivos.
@@ -304,7 +302,7 @@
 
             Além disso, uma combinação da GRL com a \emph{Use Case Map} (UCM) deu origem a \emph{User Requirement Notation} (URN) - um padrão internacional do \emph{International  Telecommunication  Union} (ITU) para notação de requisitos de usuário.
 
-        % [end subsection]
+        % [end]
 
         \subsection{Tropos}
             Tropos é um projeto que foi lançado em 2000 \cite{mylopoulos2001uml}, e visa apoiar a construção de sistemas de software orientados a agentes.
@@ -314,9 +312,9 @@
             Este modelo é refinado até que este represente o ambiente com o sistema em seu contexto.
             Cada modelo é descrito em termos dos atores observados no ambiente em modelagem, seus objetivos e relacionamentos.
             A metodologia Tropos oferece um framework que engloba as principais fases de desenvolvimento de software, com o apoio das seguintes atividades: Requisitos Iniciais, Requisitos Finais, Projeto Arquitetural e Projeto Detalhado.
-        % [end subsection]
+        % [end]
 
-    % [end section]
+    % [end]
     \section{Ferramenta OME }
         \label{cap:framework-sec:ferramentas}
         % intro
@@ -327,7 +325,7 @@
                 como em \cite{santos2008istar}(Tabela 6) e no site \cite{site2013iwiki}.
 
         % Pq só as duas?
-            % Conforme foi comentado no Capítulo \ref{cap:introducao}, os arquivos de entrada aceitos pelo JGOOSE devem estar no formato TELOS (.tel).
+            % Conforme foi comentado no Capítulo \ref{cap:introducao}, os arquivos de entrada aceitos pela JGOOSE devem estar no formato TELOS (.tel).
             % Além disso, conforme a apresentação da primeira versão da ferramenta em \cite{vicente2006}, as duas ferramentas que trabalham com esse formato são a OME e a OpenOME.
             % call next
             % Dessa forma, a OME e a OpenOME são apresentadas a seguir.
@@ -350,17 +348,38 @@
                 \begin{figure}[h!]
                     \centering
                         \includegraphics[width=0.8\linewidth]{Figuras/istar/tela-ome.jpg}
-                        \caption{Exemplo de modelagem com a ferramenta OME3 (arquivo "Meeting-Schedule.tel")}
+                        \caption{Exemplo de modelagem com a ferramenta OME3}
                         \label{fig:tela-ome}
                 \end{figure}
 
-                Como exemplo, têm-se na Figura \ref{fig:tela-ome} um dos modelos de exemplos já contidos na ferramenta OME3 junto à instalação.
+                Como exemplo, têm-se na Figura \ref{fig:tela-ome} um dos modelos de exemplos já contidos na ferramenta OME3 junto à instalação (arquivo: ``Meeting-Schedule.tel'').
                 Nessa tela, pode-se observar a barra de ferramentas (\emph{toolbar}) com as opções para criação dos elementos i*: atores, elementos de dependência, links  de  dependência, links  de  associação, etc.
 
                 Cabe relembrar que essa ferramenta gera os modelos i* no formato TELOS, atualmente aceitos pela ferramenta JGOOSE.
-                Além disso, considerando que a ferramenta apresenta problemas de instabilidade e seu processo de desenvolvimento foi descontinuado, acredita-se que o JGOOSE deva adotar uma nova solução para este fim.
+                Além disso, considerando que a ferramenta apresenta problemas de instabilidade e seu processo de desenvolvimento foi descontinuado, acredita-se que a JGOOSE deva adotar uma nova solução para este fim.
 
-    % [end section]
+    % [end]
+
+    \section{iStarML}
+        % intro
+            Muitas ferramentas foram criadas com base nos conceitos do framework i* ou de variações desse \cite{cares2012towards} \cite{cares2011towards}.
+            Isso acabou gerando modelos específicos para cada ferramenta, dificultando o intercâmbio de modelos entre essas ferramentas.
+            Pensando nisso, foi desenvolvida a iStarML.
+            Um meta-modelo baseado em XML (\emph{Extensible Markup Language}) usado para representar modelos i* \cite{cares2008istarml}.
+            
+            O principal objetivo desse meta-modelo é proporcionar um formato de intercâmbio entre os outros formatos de modelos do i*.
+            Ou seja, a especificação iStarML deve suportar todas as outras definições e especificações dos modelos já propostos.
+            Com isso, tudo o que se consegue especificar no formato TELOS, por exemplo, deve-se conseguir também no formato iStarML.
+
+            Como prova de conceitos, foi realizado um estudo onde se aplicou o iStarML estritamente para fazer a interconexão entre duas ferramentas diferentes \cite{colomer2011model}.
+            Nesse estudo, as ferramentas aplicadas foram jUCMNav \cite{kealey2006integrating} e a HiME \cite{lopez2009hime}.
+
+            Porém, existe a preocupação sobre a real adoção da especificação iStarML. Como exemplo, tem-se a promessa da ferramenta OpenOME, que diz estar trabalhando para implementar rotinas de importação/exportação em iStarML \cite{horkoff2011openome} \cite{laue2011adding}.
+
+            Conforme já mencionado no Capítulo \ref{cap:introducao}, é objetivo dessa pesquisa a implementação e adoção do iStarML como especificação do formato de arquivo padrão. Portanto, detalhes mais específicos sobre a linguagem iStarML serão feitas no Capítulo \ref{cap:proposta}.
+
+    % [end]
+
     
     \section{Considerações Finais do Capítulo}
         \label{cap:framework-sec:conclusao}
@@ -372,7 +391,7 @@
                 as variações do i* e seus respectivos meta-modelos, são estudados e analisados.
             Apesar das variações apresentadas, destaca-se a solução de intercâmbio entre diferentes formatos e ferramentas, iStarML.
             O iStarML foi adotado pelo editor proposto e será discutido melhor no Capítulo \ref{cap:proposta}.
-    % [end section]
+    % [end]
 
 % bibliography, just for auto-link in sublime text
 % before compile main.tex, comment line below

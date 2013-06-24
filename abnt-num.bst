@@ -1686,8 +1686,6 @@ FUNCTION {book}
   format.furtherresp new.sentence
   format.edition output new.sentence
   format.publisher.address output
-  iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
-                 {format.year output new.sentence} if$
   format.book.pages output
   format.illustrated
   format.dimensions  new.sentence
@@ -1697,6 +1695,8 @@ FUNCTION {book}
   format.issn output %pode parecer curioso, mas revistas inteiras são tratadas como livro
   format.isbn output new.sentence
   format.url
+  iso.date.place {abnt.alf 'skip$ {format.year output new.sentence} if$}
+                 {format.year output new.sentence} if$
   fin.entry
 }
 FUNCTION {booklet}
@@ -1730,13 +1730,13 @@ FUNCTION {inbook}
   format.furtherresp new.sentence
   format.edition output new.sentence
   format.publisher.address output
-  format.year output new.sentence
   format.bvolume.if.no.series output
   format.volume.number.series output
   format.chapter.pages output new.sentence
   format.isbn output new.block
   format.note output new.block
   format.url
+  format.year output new.sentence
   fin.entry
 }
 
@@ -1748,13 +1748,13 @@ FUNCTION {incollection}
   format.in.ed.booktitle
   format.edition output new.sentence
   format.publisher.address output
-  format.year output
   format.volume.number.series output new.sentence
   format.bvolume.if.no.series output
   format.chapter.pages output new.sentence
   format.isbn output new.block
   format.note output new.block
   format.url
+  format.year output
   fin.entry
 }
 FUNCTION {inproceedings}
@@ -1764,7 +1764,6 @@ FUNCTION {inproceedings}
   format.title "title" output.check  new.sentence
   format.in.ed.booktitle
   format.publisher.address output
-  format.year output new.sentence
   format.bvolume.if.no.series output
   format.volume.number.series output
   format.pages output
@@ -1772,6 +1771,7 @@ FUNCTION {inproceedings}
   format.issn output new.sentence
   format.note output new.sentence
   format.url
+  format.year output new.sentence
   fin.entry
 }
 FUNCTION {journalpart}
@@ -1882,7 +1882,6 @@ FUNCTION {thesis}
   format.btitle "title" output.check new.block
   abnt.thesis.year #1 = abnt.thesis.year #2 = or
     {format.date "year" output.check new.sentence} 'skip$ if$
-  format.year.presented output new.sentence
   format.book.pages output new.sentence
   format.thesis.type output.nonnull
   school "school" bibinfo.warn output.dash
@@ -1891,6 +1890,7 @@ FUNCTION {thesis}
     {format.date "year" output.check new.sentence} 'skip$ if$
   format.note output new.block
   format.url
+  format.year.presented output new.sentence
   fin.entry
 }
 
@@ -1906,6 +1906,11 @@ FUNCTION {proceedings}
   format.btitle "title" output.check
   format.bvolume output
   format.volume.number.series output
+  new.sentence format.book.pages output new.sentence
+  format.isbn output
+  format.issn output  new.block
+  format.note output  new.block
+  format.url
   editor empty$
     { publisher empty$
         'skip$
@@ -1920,11 +1925,6 @@ FUNCTION {proceedings}
           format.publisher.address output format.year output}
       if$ }
   if$
-  new.sentence format.book.pages output new.sentence
-  format.isbn output
-  format.issn output  new.block
-  format.note output  new.block
-  format.url
   fin.entry
 }
 

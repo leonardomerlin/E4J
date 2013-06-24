@@ -1,0 +1,32 @@
+ATOR:
+	Design Engineer
+	Project Manager
+
+	AGENTE:
+		- concreto, físico, nome de pessoas ou sistemas.
+		☐ Online Education System:
+			(is part of) Registration sub-system
+			(is part of) Invoice Generator sub-system
+		
+		E4J (Sistema):
+			(is part of) JGOOSE sub-sistema
+			(is part of) iStarML sub-sistema
+
+	PAPEL: características fáceis de passar para outro ator social.
+		Avaliador
+
+	POSICAO: conjunto de papéis desempenhado ou atribuído
+
+OBJETIVO:
+	coisa SER FEITA
+	curso SER FORNECIDO
+
+TAREFA
+	FAZER coisa
+	FORNECER curso
+	DESENVOLVER site e-learning
+	CONTRATAR especialistas em educação
+	REGISTRAR estudantes
+	GERAR faturas
+
+
