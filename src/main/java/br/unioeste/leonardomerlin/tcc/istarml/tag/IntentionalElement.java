@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.namespace.QName;
 
@@ -25,9 +26,11 @@ import javax.xml.namespace.QName;
  * @author Leonardo
  */
 @XmlRootElement(name = "ielement")
-public class IElement {
+public class IntentionalElement {
     
-    private BasicAttributes basicAttrs;
+    private String id;
+    
+    private String name;
     
     @XmlAnyAttribute
     protected Map<QName, String> extraAttrs = new HashMap<>();
@@ -46,34 +49,31 @@ public class IElement {
     private Graphic graphicNode;
     
     @XmlElement
-    private List<IElementLink> links;
+    private List<IntentionalElementLink> links;
 
-    public IElement() {
-        this.basicAttrs = new BasicAttributes();
+    public IntentionalElement() {
         this.links = new ArrayList<>();
     }
     
     @XmlAttribute
+    @XmlID
     public String getId() {
-        return this.basicAttrs.getId();
+        return this.id;
     }
-    
+
     public void setId(String id) {
-        this.basicAttrs.setId(id);
+        this.id = id;
     }
-    
+
     @XmlAttribute
     public String getName() {
-        return this.basicAttrs.getName();
+        return this.name;
     }
 
     public void setName(String name) {
-        this.basicAttrs.setName(name);
+        this.name = name;
     }
     
-    public String getRef() {
-        return this.basicAttrs.getRef();
-    }
     
     /**
      *

@@ -1,5 +1,6 @@
 package br.unioeste.leonardomerlin.tcc.istarml.tag;
 
+import br.unioeste.leonardomerlin.tcc.istarml.ActorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -12,69 +13,78 @@ import static junit.framework.Assert.assertTrue;
 import junit.framework.TestCase;
 
 public class IStarMLRootTest extends TestCase {
+
     private IStarMLRoot istarml;
     private Marshaller jaxbMarshaller;
     private Unmarshaller jaxbUnmarshaller;
-    
+
     public IStarMLRootTest(String testName) {
         super(testName);
     }
-    
+
     @Override
     protected void setUp() throws Exception {
         super.setUp();
-        
-        // Common elements:
+
+        // Common elements
+
+        // iStarML: Root Tag of XML
         this.istarml = new IStarMLRoot();
-        
+
         // For XML annotation
-        JAXBContext jaxbContext = JAXBContext.newInstance(IStarMLRoot.class);
+        JAXBContext jaxbContext = JAXBContext.newInstance(
+                IStarMLRoot.class, DiagramTag.class, ActorImpl.class);
         this.jaxbMarshaller = jaxbContext.createMarshaller();
         this.jaxbUnmarshaller = jaxbContext.createUnmarshaller();
         // output pretty printed
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
     }
-    
+
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
     }
 
     /**
-     * Test <b>version</b>.<br/>
+     * <b>version</b> must be equals to "1.0".<br/>
      */
-    public void testVersion(){
+    public void testÖVersion() {
         // Version Control. Read the iStarML Spec.
         assertTrue((this.istarml.version.equals("1.0")));
     }
+
     /**
      * Test <b>set, get and size</b> of diagram list.<br/>
      */
-    public void testSizeGetSetDiagrams(){
+    public void testSizeGetSetDiagrams() {
         List diagrams = this.istarml.getDiagrams();
         assertNotNull(diagrams);
-        assertEquals(0, diagrams.size());
-        
-        List<Diagram> newDiagrams = new ArrayList<>();
+        assertEquals(1, diagrams.size());
+
+        List<DiagramTag> newDiagrams = new ArrayList<>();
         this.istarml.setDiagrams(newDiagrams);
         assertEquals(newDiagrams, this.istarml.getDiagrams());
     }
 
-    public void testOutputDefaultXML(){
-//      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-//      <istarml version="1.0"/>
+//    public void testOutputDefaultXML(){
+//        try {
+//            this.jaxbMarshaller.marshal(istarml, System.out);
+//        } catch (JAXBException ex) {
+//            Logger.getLogger(IStarMLRootTest.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+    
+    public void testOutputWithActorsXML() {
+        Actor actor = ActorFactory.createActor();
+        DiagramTag diagram = istarml.getDiagrams().get(0);
+//        diagram.addActor(actor);
         try {
             this.jaxbMarshaller.marshal(istarml, System.out);
         } catch (JAXBException ex) {
             Logger.getLogger(IStarMLRootTest.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void testInsertOneDiagramAndOutput(){
-        
-    }
-    
-    public void testInsertManyDiagrams(){
-        
+
+    public void exceptionExpected() {
     }
 }

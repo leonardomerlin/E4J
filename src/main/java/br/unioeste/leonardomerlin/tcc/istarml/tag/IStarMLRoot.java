@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * This is the main tag of the iStarML.
- * 
+ *
  * <p>XML-BNF reference:
  * <code>
  * <br/>&lt;istarml&nbsp;version=“1.0”&gt;
@@ -16,27 +16,36 @@ import javax.xml.bind.annotation.XmlRootElement;
  * <br/>&lt;/istarml&gt;
  * </code>
  * </p>
+ *
  * @author Leonardo Merlin
  */
 @XmlRootElement(name = "istarml")
 public class IStarMLRoot {
-    
+
     @XmlAttribute
     public final String version = "1.0";
-    
-    private List<Diagram> diagrams;
+    private List<DiagramTag> diagrams;
 
     public IStarMLRoot() {
         this.diagrams = new ArrayList<>();
+        this.diagrams.add(new DiagramTag());
+    }
+
+    public IStarMLRoot(DiagramTag diagram) {
+        if (null == diagram) {
+            throw new IllegalArgumentException("'diagram' must be not null.");
+        }
+
+        this.diagrams = new ArrayList<>();
+        this.diagrams.add(diagram);
     }
 
     @XmlElement(name = "diagrams")
-    public List<Diagram> getDiagrams() {
+    public List<DiagramTag> getDiagrams() {
         return diagrams;
     }
 
-    public void setDiagrams(List<Diagram> diagrams) {
+    public void setDiagrams(List<DiagramTag> diagrams) {
         this.diagrams = diagrams;
     }
-    
 }

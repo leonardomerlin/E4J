@@ -1,13 +1,12 @@
 package br.unioeste.leonardomerlin.tcc.istarml.tag;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import javax.xml.bind.annotation.XmlAnyAttribute;
+import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.namespace.QName;
 
 /**
  * This is a particular i* diagram.
@@ -26,65 +25,53 @@ import javax.xml.namespace.QName;
  * @author Leonardo Merlin
  */
 @XmlRootElement(name = "diagram")
-public class Diagram {
-    /**
-     * Attrs: id, name.
-     */
-    private BasicAttributes basicAttrs;
-    
-    private String author;
-    
-    @XmlElement
-    private Graphic graphic; //graphic-diagram
+public class DiagramTag {
 
-    @XmlElement
+    private String id;
+    private String name;
+    private String author;
+    private Graphic graphic; //graphic-diagram
     private List<Actor> actors;
-    
-    @XmlElement
-    private List<IElement> iElementExTag;
-    
-    public Diagram(){
-        this.basicAttrs = new BasicAttributes();
+    private List<IntentionalElement> intentionalElements;
+
+    public DiagramTag() {
+        this.actors = new ArrayList<>();
+        this.intentionalElements = new ArrayList<>();
     }
-    
+
     /**
      *
      * @param id Can be <code>null</code>. But, must be not <code>null</code> if
      * <b><code>name</code></b> is <code>null</code>.
      * @param name Can be <code>null</code>. But, must be not <code>null</code>
      * if <b><code>id</code></b> is <code>null</code>.
-     * @see Diagram
+     * @see DiagramTag
      */
-    public Diagram(String id, String name) {
+    public DiagramTag(String id, String name) {
         if (null == id && null == name) {
             throw new IllegalArgumentException("One of arguments (id or name) must be not null.");
         }
-        
-        this.basicAttrs = new BasicAttributes(id, name);
     }
-    
+
     @XmlAttribute
+    @XmlID
     public String getId() {
-        return this.basicAttrs.getId();
+        return this.id;
     }
-    
+
     public void setId(String id) {
-        this.basicAttrs.setId(id);
+        this.id = id;
     }
-    
+
     @XmlAttribute
     public String getName() {
-        return this.basicAttrs.getName();
+        return this.name;
     }
 
     public void setName(String name) {
-        this.basicAttrs.setName(name);
+        this.name = name;
     }
-    
-    public String getRef() {
-        return this.basicAttrs.getRef();
-    }
-    
+
     /**
      *
      * @return
@@ -100,6 +87,33 @@ public class Diagram {
      */
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @XmlElement
+    public Graphic getGraphic() {
+        return graphic;
+    }
+
+    public void setGraphic(Graphic graphic) {
+        this.graphic = graphic;
+    }
+
+    @XmlAnyElement
+    public List<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<Actor> actors) {
+        this.actors = actors;
+    }
+    
+    @XmlAnyElement
+    public List<IntentionalElement> getIntentionalElements() {
+        return intentionalElements;
+    }
+
+    public void setIntentionalElements(List<IntentionalElement> intentionalElements) {
+        this.intentionalElements = intentionalElements;
     }
 
 }
