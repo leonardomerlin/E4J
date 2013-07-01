@@ -12,10 +12,10 @@
             <MenuItem class="javax.swing.JMenuItem" name="abrirArquivoTelosMenu">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+A"/>
+                  <KeyStroke key="Ctrl+O"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/unioeste/JGOOSE/view/6211_16x16.png"/>
+                  <Image iconType="3" name="/br/unioeste/jgoose/gui/folder_open_16x16.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Abrir Arquivo Telos"/>
               </Properties>
@@ -26,15 +26,33 @@
             <MenuItem class="javax.swing.JMenuItem" name="sairMenu">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+X"/>
+                  <KeyStroke key="Alt+F4"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/unioeste/JGOOSE/view/7143_16x16.png"/>
+                  <Image iconType="3" name="/br/unioeste/jgoose/gui/cross_16x16.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sairMenuActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="MenuFerramentas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ferramentas"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="AbrirEditor">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+E"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Abrir Editor"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbrirEditorActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -47,10 +65,10 @@
             <MenuItem class="javax.swing.JMenuItem" name="diretrizesMenu">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+D"/>
+                  <KeyStroke key="F1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/unioeste/JGOOSE/view/6166_16x16.png"/>
+                  <Image iconType="3" name="/br/unioeste/jgoose/gui/doc_16x16.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Diretrizes"/>
               </Properties>
@@ -60,11 +78,8 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="sobreMenu">
               <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+S"/>
-                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/unioeste/JGOOSE/view/8417_16x16.png"/>
+                  <Image iconType="3" name="/br/unioeste/jgoose/gui/info_16x16.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sobre"/>
               </Properties>
@@ -365,7 +380,7 @@
     <Component class="javax.swing.JButton" name="abrirArquivoTelosButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/unioeste/JGOOSE/view/6211_16x16.png"/>
+          <Image iconType="3" name="/br/unioeste/jgoose/gui/folder_open_16x16.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Abrir Arquivo Telos"/>
       </Properties>
@@ -376,7 +391,7 @@
     <Component class="javax.swing.JButton" name="diretrizesButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/unioeste/JGOOSE/view/6166_16x16.png"/>
+          <Image iconType="3" name="/br/unioeste/jgoose/gui/doc_16x16.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Diretrizes"/>
       </Properties>
@@ -387,7 +402,7 @@
     <Component class="javax.swing.JButton" name="mapearCasosdeUsoButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/unioeste/JGOOSE/view/9153_16x16.png"/>
+          <Image iconType="3" name="/br/unioeste/jgoose/gui/usecase_16x16.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mapear Casos de Uso UML"/>
       </Properties>

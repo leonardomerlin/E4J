@@ -3,6 +3,7 @@ package br.unioeste.jgoose.view;
 import br.unioeste.jgoose.IStarElements.IStarElement;
 import br.unioeste.jgoose.IStarsLinks.IStarLink;
 import br.unioeste.jgoose.controller.Controller;
+import br.unioeste.jgoose.tcc.teste.Editor;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
@@ -81,6 +82,8 @@ public class PrincipalView extends javax.swing.JFrame {
         arquivo = new javax.swing.JMenu();
         abrirArquivoTelosMenu = new javax.swing.JMenuItem();
         sairMenu = new javax.swing.JMenuItem();
+        MenuFerramentas = new javax.swing.JMenu();
+        AbrirEditor = new javax.swing.JMenuItem();
         ajuda = new javax.swing.JMenu();
         diretrizesMenu = new javax.swing.JMenuItem();
         sobreMenu = new javax.swing.JMenuItem();
@@ -190,7 +193,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
         abasMenu.addTab("Links i* Mapeados", linksMapeados);
 
-        abrirArquivoTelosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/6211_16x16.png"))); // NOI18N
+        abrirArquivoTelosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/folder_open_16x16.png"))); // NOI18N
         abrirArquivoTelosButton.setText("Abrir Arquivo Telos");
         abrirArquivoTelosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +201,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
         });
 
-        diretrizesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/6166_16x16.png"))); // NOI18N
+        diretrizesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/doc_16x16.png"))); // NOI18N
         diretrizesButton.setText("Diretrizes");
         diretrizesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +209,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
         });
 
-        mapearCasosdeUsoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/9153_16x16.png"))); // NOI18N
+        mapearCasosdeUsoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/usecase_16x16.png"))); // NOI18N
         mapearCasosdeUsoButton.setText("Mapear Casos de Uso UML");
         mapearCasosdeUsoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,8 +219,8 @@ public class PrincipalView extends javax.swing.JFrame {
 
         arquivo.setText("Arquivo");
 
-        abrirArquivoTelosMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        abrirArquivoTelosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/6211_16x16.png"))); // NOI18N
+        abrirArquivoTelosMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        abrirArquivoTelosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/folder_open_16x16.png"))); // NOI18N
         abrirArquivoTelosMenu.setText("Abrir Arquivo Telos");
         abrirArquivoTelosMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,8 +229,8 @@ public class PrincipalView extends javax.swing.JFrame {
         });
         arquivo.add(abrirArquivoTelosMenu);
 
-        sairMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
-        sairMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/7143_16x16.png"))); // NOI18N
+        sairMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        sairMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/cross_16x16.png"))); // NOI18N
         sairMenu.setText("Sair");
         sairMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,10 +241,23 @@ public class PrincipalView extends javax.swing.JFrame {
 
         barraMenu.add(arquivo);
 
+        MenuFerramentas.setText("Ferramentas");
+
+        AbrirEditor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        AbrirEditor.setText("Abrir Editor");
+        AbrirEditor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbrirEditorActionPerformed(evt);
+            }
+        });
+        MenuFerramentas.add(AbrirEditor);
+
+        barraMenu.add(MenuFerramentas);
+
         ajuda.setText("Ajuda");
 
-        diretrizesMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        diretrizesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/6166_16x16.png"))); // NOI18N
+        diretrizesMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        diretrizesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/doc_16x16.png"))); // NOI18N
         diretrizesMenu.setText("Diretrizes");
         diretrizesMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,8 +266,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
         ajuda.add(diretrizesMenu);
 
-        sobreMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        sobreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/JGOOSE/view/8417_16x16.png"))); // NOI18N
+        sobreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/info_16x16.png"))); // NOI18N
         sobreMenu.setText("Sobre");
         sobreMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,6 +349,11 @@ public class PrincipalView extends javax.swing.JFrame {
         telacasosdeuso.setVisible(true);
         this.setEnabled(false);
     }//GEN-LAST:event_mapearCasosdeUsoButtonActionPerformed
+
+    private void AbrirEditorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirEditorActionPerformed
+        Editor editor = new Editor();
+        
+    }//GEN-LAST:event_AbrirEditorActionPerformed
 
     /*
      * Atualiza as Tabelas Informações do Arquivo, Atores i* Mapeados,
@@ -647,12 +667,15 @@ public class PrincipalView extends javax.swing.JFrame {
          * Create and display the form
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new PrincipalView().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AbrirEditor;
+    private javax.swing.JMenu MenuFerramentas;
     private javax.swing.JTabbedPane abasMenu;
     private javax.swing.JButton abrirArquivoTelosButton;
     private javax.swing.JMenuItem abrirArquivoTelosMenu;
