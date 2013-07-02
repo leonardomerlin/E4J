@@ -8,14 +8,14 @@ import javax.swing.JFrame;
  *
  * @author Leonardo Merlin - leonardo.merlin at unioeste.br
  */
-public class WindowListenerImpl implements WindowListener {
+public class EditorWindowListener implements WindowListener {
 
-    private final JFrame jgooseView;
-    private final JFrame e4jView;
+    private final JFrame jgooseJFrame;
+    private final JFrame editorJFrame;
 
-    public WindowListenerImpl(final JFrame jgooseView, final JFrame e4jView) {
-        this.jgooseView = jgooseView;
-        this.e4jView = e4jView;
+    public EditorWindowListener(final JFrame jgooseView, final JFrame e4jView) {
+        this.jgooseJFrame = jgooseView;
+        this.editorJFrame = e4jView;
     }
 
     @Override
@@ -24,21 +24,20 @@ public class WindowListenerImpl implements WindowListener {
 
     @Override
     public void windowClosing(WindowEvent we) {
-        JFrame closedFrame = (JFrame) we.getSource();
-
-        if (closedFrame == this.e4jView) {
-            this.jgooseView.setVisible(true);
-            this.e4jView.setVisible(false);
-        }
+        this.windowClosed(we);
     }
 
     @Override
     public void windowClosed(WindowEvent we) {
         JFrame closedFrame = (JFrame) we.getSource();
 
-        if (closedFrame == this.e4jView) {
-            this.jgooseView.setVisible(true);
-            this.e4jView.setVisible(false);
+        if (closedFrame == this.editorJFrame) {
+            this.editorJFrame.setVisible(false);
+            this.jgooseJFrame.setVisible(true);
+            this.jgooseJFrame.setState(JFrame.NORMAL);
+        }else{
+            //force jgoose to exit.
+            System.exit(0);
         }
     }
 

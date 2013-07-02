@@ -41,25 +41,12 @@ public class GuidelinesJDialog extends JDialog {
 
     public GuidelinesJDialog(Frame frame) throws BadLocationException {
         super(frame);
-        //@TODO: internationalize this.
+        //@TODO: internationalize the title of guidelines dialog.
         setTitle("Diretrizes");
         setLayout(new BorderLayout());
 
         // Creates the gradient panel
-        JPanel panel = new JPanel(new BorderLayout()) {
-            private static final long serialVersionUID = -5062895855016210947L;
-
-            @Override
-            public void paintComponent(Graphics g) {
-                super.paintComponent(g);
-
-                // Paint gradient background
-                Graphics2D g2d = (Graphics2D) g;
-                g2d.setPaint(new GradientPaint(0, 0, Color.WHITE, getWidth(),
-                        0, getBackground()));
-                g2d.fillRect(0, 0, getWidth(), getHeight());
-            }
-        };
+        JPanel panel = new JPanel(new BorderLayout());
 
         panel.setBorder(BorderFactory.createCompoundBorder(BorderFactory
                 .createMatteBorder(0, 0, 1, 0, Color.GRAY), BorderFactory
@@ -132,6 +119,7 @@ public class GuidelinesJDialog extends JDialog {
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
         // Adds OK button to close window
+        // @TODO: internationalize close button name.
         JButton closeButton = new JButton("Close");
         closeButton.addActionListener(new ActionListener() {
             @Override
