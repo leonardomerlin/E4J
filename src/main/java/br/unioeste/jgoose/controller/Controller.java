@@ -5,7 +5,7 @@ import br.unioeste.jgoose.IStarElements.IStarActorElement;
 import br.unioeste.jgoose.CasosDeUso.DiagramaCasosDeUso;
 import br.unioeste.jgoose.model.TokensOpenOME;
 import br.unioeste.jgoose.view.AtorSistemaView;
-import br.unioeste.jgoose.view.PrincipalView;
+import br.unioeste.jgoose.view.MainView;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Controller {
 
-    private static PrincipalView principal = new PrincipalView();
+    private static MainView principal = new MainView();
     private static TokensOpenOME ome;
     private static String atorSistema;
     private static DiagramaCasosDeUso diagrama;
@@ -33,7 +33,7 @@ public class Controller {
      * Método que abre o Arquivo Telos, procura e armazena em uma estrutura de
      * dados os Atores, Elementos e Links
      */
-    public static void abrirArquivoTelos(PrincipalView interfacePrincipal) {
+    public static void abrirArquivoTelos(MainView interfacePrincipal) {
         principal = interfacePrincipal;
         ome = new TokensOpenOME();
         ome.abrirArquivo();

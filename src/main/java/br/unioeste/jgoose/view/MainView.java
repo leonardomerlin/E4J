@@ -3,26 +3,31 @@ package br.unioeste.jgoose.view;
 import br.unioeste.jgoose.IStarElements.IStarElement;
 import br.unioeste.jgoose.IStarsLinks.IStarLink;
 import br.unioeste.jgoose.controller.Controller;
-import br.unioeste.jgoose.tcc.teste.Editor;
+import br.unioeste.jgoose.e4j.swing.Editor;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.BadLocationException;
 
 /**
  *
  * @author Diego Peliser
  */
-public class PrincipalView extends javax.swing.JFrame {
+public class MainView extends javax.swing.JFrame {
 
     public JButton mapearCasosdeUso = new JButton();
+    private Editor e4jInstace = null;
 
     /**
-     * Creates new form PrincipalView
+     * Creates new form MainView
      */
-    public PrincipalView() {
+    public MainView() {
         initComponents();
         setLocationRelativeTo(null);
         //Seta tema de swing igual ao tema do SO
@@ -193,7 +198,7 @@ public class PrincipalView extends javax.swing.JFrame {
 
         abasMenu.addTab("Links i* Mapeados", linksMapeados);
 
-        abrirArquivoTelosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/folder_open_16x16.png"))); // NOI18N
+        abrirArquivoTelosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder_open_16x16.png"))); // NOI18N
         abrirArquivoTelosButton.setText("Abrir Arquivo Telos");
         abrirArquivoTelosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +206,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
         });
 
-        diretrizesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/doc_16x16.png"))); // NOI18N
+        diretrizesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/doc_16x16.png"))); // NOI18N
         diretrizesButton.setText("Diretrizes");
         diretrizesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +214,7 @@ public class PrincipalView extends javax.swing.JFrame {
             }
         });
 
-        mapearCasosdeUsoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/usecase_16x16.png"))); // NOI18N
+        mapearCasosdeUsoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/usecase_16x16.png"))); // NOI18N
         mapearCasosdeUsoButton.setText("Mapear Casos de Uso UML");
         mapearCasosdeUsoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,8 +225,8 @@ public class PrincipalView extends javax.swing.JFrame {
         arquivo.setText("Arquivo");
 
         abrirArquivoTelosMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        abrirArquivoTelosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/folder_open_16x16.png"))); // NOI18N
-        abrirArquivoTelosMenu.setText("Abrir Arquivo Telos");
+        abrirArquivoTelosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder_open_16x16.png"))); // NOI18N
+        abrirArquivoTelosMenu.setText("Abrir");
         abrirArquivoTelosMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abrirArquivoTelosMenuActionPerformed(evt);
@@ -230,7 +235,7 @@ public class PrincipalView extends javax.swing.JFrame {
         arquivo.add(abrirArquivoTelosMenu);
 
         sairMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        sairMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/cross_16x16.png"))); // NOI18N
+        sairMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cross_16x16.png"))); // NOI18N
         sairMenu.setText("Sair");
         sairMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -257,7 +262,7 @@ public class PrincipalView extends javax.swing.JFrame {
         ajuda.setText("Ajuda");
 
         diretrizesMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        diretrizesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/doc_16x16.png"))); // NOI18N
+        diretrizesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/doc_16x16.png"))); // NOI18N
         diretrizesMenu.setText("Diretrizes");
         diretrizesMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,7 +271,7 @@ public class PrincipalView extends javax.swing.JFrame {
         });
         ajuda.add(diretrizesMenu);
 
-        sobreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/unioeste/jgoose/gui/info_16x16.png"))); // NOI18N
+        sobreMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/info_16x16.png"))); // NOI18N
         sobreMenu.setText("Sobre");
         sobreMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,15 +337,27 @@ public class PrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_abrirArquivoTelosMenuActionPerformed
 
     private void diretrizesMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diretrizesMenuActionPerformed
-        DiretrizesView diretrizes = new DiretrizesView(this);
-        diretrizes.setVisible(true);
-        this.setEnabled(false);
+        this.showGuidelinesDialog();
     }//GEN-LAST:event_diretrizesMenuActionPerformed
 
+    private void showGuidelinesDialog(){
+        GuidelinesJDialog diretrizes;
+        try {
+            diretrizes = new GuidelinesJDialog(this);
+            diretrizes.setModal(true);
+
+            int x = this.getX() + (this.getWidth() - diretrizes.getWidth()) / 2;
+            int y = this.getY() + (this.getHeight() - diretrizes.getHeight()) / 2;
+            diretrizes.setLocation(x, y);
+            
+            diretrizes.setVisible(true);
+        } catch (BadLocationException ex) {
+            Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void diretrizesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diretrizesButtonActionPerformed
-        DiretrizesView diretrizes = new DiretrizesView(this);
-        diretrizes.setVisible(true);
-        this.setEnabled(false);
+        this.showGuidelinesDialog();
     }//GEN-LAST:event_diretrizesButtonActionPerformed
 
     private void mapearCasosdeUsoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mapearCasosdeUsoButtonActionPerformed
@@ -351,8 +368,17 @@ public class PrincipalView extends javax.swing.JFrame {
     }//GEN-LAST:event_mapearCasosdeUsoButtonActionPerformed
 
     private void AbrirEditorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirEditorActionPerformed
-        Editor editor = new Editor();
-        
+        //
+        if (e4jInstace == null) {
+            boolean isPartOfJGOOSE = true;
+//            e4jInstace = new Editor();
+            JFrame frame = e4jInstace.getFrame();
+            WindowListenerImpl windowListener = new WindowListenerImpl(this, frame);
+            this.addWindowListener(windowListener);
+//            frame.addWindowListener(windowListener);
+        }
+        e4jInstace.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_AbrirEditorActionPerformed
 
     /*
@@ -652,14 +678,8 @@ public class PrincipalView extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PrincipalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -669,7 +689,7 @@ public class PrincipalView extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new PrincipalView().setVisible(true);
+                new MainView().setVisible(true);
             }
         });
     }

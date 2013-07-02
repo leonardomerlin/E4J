@@ -15,12 +15,12 @@ import javax.swing.text.StyleConstants;
  */
 public class CasosDeUsoView extends javax.swing.JFrame {
 
-    private PrincipalView principal = new PrincipalView();
+    private MainView principal = new MainView();
 
     /**
      * Creates new form CasosDeUsoView
      */
-    public CasosDeUsoView(PrincipalView interfacePrincipal) {
+    public CasosDeUsoView(MainView interfacePrincipal) {
         initComponents();
         setLocationRelativeTo(null);
         principal = interfacePrincipal;

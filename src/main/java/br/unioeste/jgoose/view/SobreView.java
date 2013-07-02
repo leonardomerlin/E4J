@@ -6,12 +6,12 @@ package br.unioeste.jgoose.view;
  */
 public class SobreView extends javax.swing.JFrame {
     
-    private PrincipalView principal = new PrincipalView();
+    private MainView principal = new MainView();
     
     /**
      * Creates new form SobreView
      */
-    public SobreView(PrincipalView interfacePrincipal) {
+    public SobreView(MainView interfacePrincipal) {
         initComponents();
         setLocationRelativeTo(null);
         principal = interfacePrincipal;

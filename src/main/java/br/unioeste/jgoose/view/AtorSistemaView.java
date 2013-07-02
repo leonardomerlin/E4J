@@ -8,12 +8,12 @@ import br.unioeste.jgoose.controller.Controller;
  */
 public class AtorSistemaView extends javax.swing.JFrame {
 
-    private PrincipalView principal = new PrincipalView();
+    private MainView principal = new MainView();
 
     /**
      * Creates new form AtorSistemaView
      */
-    public AtorSistemaView(PrincipalView interfacePrincipal) {
+    public AtorSistemaView(MainView interfacePrincipal) {
         initComponents();
         setLocationRelativeTo(null);
         principal = interfacePrincipal;
