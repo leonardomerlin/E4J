@@ -3,7 +3,6 @@ package br.unioeste.jgoose.view;
 import br.unioeste.jgoose.IStarElements.IStarElement;
 import br.unioeste.jgoose.IStarsLinks.IStarLink;
 import br.unioeste.jgoose.controller.Controller;
-import br.unioeste.jgoose.e4j.swing.BasicIStarEditor;
 import br.unioeste.jgoose.e4j.swing.EditorJFrame;
 import java.util.ArrayList;
 import javax.swing.JButton;

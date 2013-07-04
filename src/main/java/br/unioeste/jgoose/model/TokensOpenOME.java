@@ -20,6 +20,7 @@ import br.unioeste.jgoose.IStarsLinks.IStarLink;
 import br.unioeste.jgoose.IStarsLinks.IStarMeansEndsLink;
 import br.unioeste.jgoose.IStarsLinks.IStarOccupiesLink;
 import br.unioeste.jgoose.IStarsLinks.IStarPlaysLink;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -77,6 +78,10 @@ public class TokensOpenOME {
      */
     public void abrirArquivo() {
         arquivoEntrada = new Arquivo();
+        dirEntrada = arquivoEntrada.getdirEntrada();
+    }
+    public void abrirArquivo(File inputfile, File output){
+        arquivoEntrada = new Arquivo(inputfile, output);
         dirEntrada = arquivoEntrada.getdirEntrada();
     }
 
@@ -746,8 +751,8 @@ public class TokensOpenOME {
         ArrayList childrens;
         childrens = actorsOME.get(posicaoAtorSistema(systemActor)).getChildren();
         boolean SR;
-        if (childrens.size() != 0) {
-            SR = true; //verifica se o Diagrama � SD ou SR
+        if (!childrens.isEmpty()) {
+            SR = true; //verifica se o Diagrama é SD ou SR
             //System.out.println("Diagrama SR - Razões Estratégicas");
         } else {
             SR = false;
@@ -758,17 +763,8 @@ public class TokensOpenOME {
 
     /**
      *
-     * @param ome
-     *
-     */
-    /*
-     * public void verificaSDSR(TokensOpenOME ome){ ArrayList
-     * <IStarActorElement> actorsOME= (ArrayList)ome.getActors().clone();
-     * ArrayList childrens; childrens = actorsOME.get().getChildren(); /*for
-     * (int i=0;i<actorsOME.size();i++){ childrens =
-     * actorsOME.get(i).getChildren(); if (childrens.size()!=0){ SR = true;
-     * System.out.println("Diagrama SR - Razões Estratégicas"); } } if (SR ==
-     * false) System.out.println("Diagrama SD - Dependências Estratégicas"); }
+     * @param codigoAtor
+     * @return
      */
     public int procuraAtorNome(String codigoAtor) {
         int posAtor = -1;
@@ -788,28 +784,28 @@ public class TokensOpenOME {
     /**
      * @return Returns the actors.
      */
-    public ArrayList getActors() {
+    public ArrayList<IStarActorElement> getActors() {
         return actors;
     }
 
     /**
      * @return Returns the agents.
      */
-    public ArrayList getAgents() {
+    public ArrayList<IStarAgentElement> getAgents() {
         return agents;
     }
 
     /**
      * @return Returns the roles.
      */
-    public ArrayList getRoles() {
+    public ArrayList<IStarRoleElement> getRoles() {
         return roles;
     }
 
     /**
      * @return Returns the positions.
      */
-    public ArrayList getPositions() {
+    public ArrayList<IStarPositionElement> getPositions() {
         return positions;
     }
 
@@ -856,42 +852,42 @@ public class TokensOpenOME {
     /**
      * @param actors The actors to set.
      */
-    public void setActors(ArrayList actors) {
+    public void setActors(ArrayList<IStarActorElement> actors) {
         this.actors = actors;
     }
 
     /**
      * @param agents The agents to set.
      */
-    public void setAgents(ArrayList agents) {
+    public void setAgents(ArrayList<IStarAgentElement> agents) {
         this.agents = agents;
     }
 
     /**
      * @param roles The roles to set.
      */
-    public void setRoles(ArrayList roles) {
+    public void setRoles(ArrayList<IStarRoleElement> roles) {
         this.roles = roles;
     }
 
     /**
      * @param positions The positions to set.
      */
-    public void setPositions(ArrayList positions) {
+    public void setPositions(ArrayList<IStarPositionElement> positions) {
         this.positions = positions;
     }
 
     /**
      * @return Returns the dependencies.
      */
-    public ArrayList getDependencies() {
+    public ArrayList<IStarLink> getDependencies() {
         return dependencies;
     }
 
     /**
      * @param dependencies The dependencies to set.
      */
-    public void setDependencies(ArrayList dependencies) {
+    public void setDependencies(ArrayList<IStarLink> dependencies) {
         this.dependencies = dependencies;
     }
 
@@ -930,7 +926,7 @@ public class TokensOpenOME {
         return elemento;
     }
 
-    public ArrayList getISA() {
+    public ArrayList<IStarLink> getISA() {
         return isas;
     }
 
@@ -938,7 +934,7 @@ public class TokensOpenOME {
         return (IStarLink) isas.get(i);
     }
 
-    public ArrayList getINS() {
+    public ArrayList<IStarLink> getINS() {
         return inss;
     }
 
@@ -946,7 +942,7 @@ public class TokensOpenOME {
         return (IStarLink) inss.get(i);
     }
 
-    public ArrayList getContribution() {
+    public ArrayList<IStarLink> getContribution() {
         return contributions;
     }
 
@@ -954,7 +950,7 @@ public class TokensOpenOME {
         return (IStarLink) contributions.get(i);
     }
 
-    public ArrayList getIsPartOf() {
+    public ArrayList<IStarLink> getIsPartOf() {
         return ispartofs;
     }
 
@@ -962,7 +958,7 @@ public class TokensOpenOME {
         return (IStarLink) ispartofs.get(i);
     }
 
-    public ArrayList getOccupies() {
+    public ArrayList<IStarLink> getOccupies() {
         return occupiess;
     }
 
@@ -970,7 +966,7 @@ public class TokensOpenOME {
         return (IStarLink) occupiess.get(i);
     }
 
-    public ArrayList getPlays() {
+    public ArrayList<IStarLink> getPlays() {
         return playss;
     }
 
@@ -978,7 +974,7 @@ public class TokensOpenOME {
         return (IStarLink) playss.get(i);
     }
 
-    public ArrayList getCovers() {
+    public ArrayList<IStarLink> getCovers() {
         return coverss;
     }
 

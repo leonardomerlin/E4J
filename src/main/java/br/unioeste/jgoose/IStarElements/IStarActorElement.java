@@ -22,7 +22,6 @@ public class IStarActorElement {
     private ArrayList links; //ligações (códigos)
 
     public IStarActorElement() {
-        super();
         this.children = new ArrayList();
         this.links = new ArrayList();
     }
