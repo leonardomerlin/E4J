@@ -1,6 +1,6 @@
 package br.unioeste.jgoose.istarml;
 
-import br.unioeste.jgoose.istarml.parser.telos.TelosFilenameFilter;
+import br.unioeste.jgoose.io.filters.TelosFilenameFilter;
 import br.unioeste.jgoose.model.TokensOpenOME;
 import java.io.File;
 import java.util.ArrayList;
@@ -23,6 +23,7 @@ import org.junit.runners.Parameterized;
 
 /**
  * Unit Test for TokensOpenOME.
+ *
  * @author Leonardo Merlin - leonardo.merlin at unioeste.br
  */
 @RunWith(Parameterized.class)
@@ -45,6 +46,9 @@ public class TelosTest {
     private static final String EXPECTED_OCCUPIES = "occupies";
     //
     private static final String EXPECTED_CONTRIBUTIONS = "contributions";
+    private static final String EXPECTED_DECOMPOSITION = "decompositions";
+    private static final String EXPECTED_MEANSEND = "meansend";
+    private static final String EXPECTED_DEPENDENCY = "meansend";
     //
     private TokensOpenOME ome;
     //
@@ -73,6 +77,18 @@ public class TelosTest {
         defaults.put(EXPECTED_AGENTS, 0);
         defaults.put(EXPECTED_ROLES, 0);
         defaults.put(EXPECTED_POSITIONS, 0);
+        //
+        defaults.put(EXPECTED_COVERS, 0);
+        defaults.put(EXPECTED_PLAYS, 0);
+        defaults.put(EXPECTED_INS, 0);
+        defaults.put(EXPECTED_ISA, 0);
+        defaults.put(EXPECTED_ISPARTOF, 0);
+        defaults.put(EXPECTED_OCCUPIES, 0);
+        //
+        defaults.put(EXPECTED_CONTRIBUTIONS, 0);
+        defaults.put(EXPECTED_DECOMPOSITION, 0);
+        defaults.put(EXPECTED_MEANSEND, 0);
+        defaults.put(EXPECTED_DEPENDENCY, 0);
         //
 
         Properties prop;
@@ -124,40 +140,64 @@ public class TelosTest {
         total += this.ome.getContribution().size();
         Assert.assertEquals(this.expectedValues.get(EXPECTED_ACTORS), total);
     }
-    
+
     @Test
     public void countActors() {
         int total = this.ome.getActors().size();
         Assert.assertEquals(this.expectedValues.get(EXPECTED_ACTORS), total);
     }
-    
+
     @Test
     public void countAgents() {
         int total = this.ome.getAgents().size();
         Assert.assertEquals(this.expectedValues.get(EXPECTED_AGENTS), total);
     }
-    
+
     @Test
     public void countRoles() {
         int total = this.ome.getRoles().size();
         Assert.assertEquals(this.expectedValues.get(EXPECTED_ROLES), total);
     }
-    
+
     @Test
     public void countPosition() {
         int total = this.ome.getPositions().size();
         Assert.assertEquals(this.expectedValues.get(EXPECTED_POSITIONS), total);
     }
-    
-    @Test
-    public void countContributions() {
-        int total = this.ome.getContributions().size();
-        Assert.assertEquals(this.expectedValues.get(EXPECTED_CONTRIBUTIONS), total);
-    }
-    
+
     @Test
     public void countCovers() {
         int total = this.ome.getCovers().size();
         Assert.assertEquals(this.expectedValues.get(EXPECTED_COVERS), total);
+    }
+
+    @Test
+    public void countPlays() {
+        int total = this.ome.getPlays().size();
+        Assert.assertEquals(this.expectedValues.get(EXPECTED_PLAYS), total);
+    }
+
+    @Test
+    public void countINS() {
+        int total = this.ome.getINS().size();
+        Assert.assertEquals(this.expectedValues.get(EXPECTED_INS), total);
+    }
+
+    @Test
+    public void countISA() {
+        int total = this.ome.getISA().size();
+        Assert.assertEquals(this.expectedValues.get(EXPECTED_ISA), total);
+    }
+
+    @Test
+    public void countIsPartOf() {
+        int total = this.ome.getIsPartOf().size();
+        Assert.assertEquals(this.expectedValues.get(EXPECTED_ISPARTOF), total);
+    }
+
+    @Test
+    public void countOccupies() {
+        int total = this.ome.getOccupies().size();
+        Assert.assertEquals(this.expectedValues.get(EXPECTED_OCCUPIES), total);
     }
 }
