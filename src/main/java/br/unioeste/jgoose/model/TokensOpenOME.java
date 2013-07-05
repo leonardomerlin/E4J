@@ -80,7 +80,15 @@ public class TokensOpenOME {
         arquivoEntrada = new Arquivo();
         dirEntrada = arquivoEntrada.getdirEntrada();
     }
-    public void abrirArquivo(File inputfile, File output){
+
+    /**
+     * Added to start and read telos without swing or gui.
+     *
+     * @author Leonardo Merlin
+     * @param inputfile
+     * @param output
+     */
+    public void abrirArquivo(File inputfile, File output) {
         arquivoEntrada = new Arquivo(inputfile, output);
         dirEntrada = arquivoEntrada.getdirEntrada();
     }
@@ -92,136 +100,117 @@ public class TokensOpenOME {
     public void procuraArquivo() {
         String linha = arquivoEntrada.getLine();
         String codigo = null;
-        int tipoElementoLink = 99;
+        ElementType elementType = null;
         while (linha != null) {
             if (verificaToken(linha)) {
                 codigo = armazenaCodigo(linha);
                 linha = arquivoEntrada.getLine(); // IN OMEElement, OMEElementClass ou IN OMELink, OMELinkClass,
-                tipoElementoLink = verificaElementoLink(linha); //valor entre 0 e 17
-                switch (tipoElementoLink) {
-                    case 0: {
+                elementType = verificaElementoLink(linha); //valor entre 0 e 17
+                switch (elementType) {
+                    case ACTOR:
                         IStarActorElement act = new IStarActorElement(); //cria um Actor i*
                         act = criarAtor(act, codigo, linha);
                         actors.add(act);
-                    }
-                    break;
-                    case 1: {
+                        break;
+                    case GOAL:
                         IStarGoalElement goal = new IStarGoalElement(); //cria um Objetivo i*
                         goal = (IStarGoalElement) criarElemento(goal, codigo, linha);
                         goals.add(goal);
-                    }
-                    break;
-                    case 2: {
+                        break;
+                    case TASK:
                         IStarTaskElement task = new IStarTaskElement(); //cria uma Tarefa i*
                         task = (IStarTaskElement) criarElemento(task, codigo, linha);
                         tasks.add(task);
-                    }
-                    break;
-                    case 3: {
+                        break;
+                    case SOFTGOAL:
                         IStarSoftGoalElement softgoal = new IStarSoftGoalElement(); //cria um Objetivo Soft i*
                         softgoal = (IStarSoftGoalElement) criarElemento(softgoal, codigo, linha);
                         softgoals.add(softgoal);
-                    }
-                    break;
-                    case 4: {
+                        break;
+                    case RESOURCE:
                         IStarResourceElement resource = new IStarResourceElement(); //cria um Recurso i*
                         resource = (IStarResourceElement) criarElemento(resource, codigo, linha);
                         resources.add(resource);
-                    }
-                    break;
-                    case 5: {
+                        break;
+                    case DEPENDENCY:
                         IStarDependencyLink dependency = new IStarDependencyLink();// cria uma Ligação de Dependência
                         dependency = (IStarDependencyLink) criarLink(dependency, codigo, linha);
                         dependencies.add(dependency);
-                    }
-                    break;
-                    case 6: {
+                        break;
+                    case DECOMPOSITION:
                         // cria uma Ligação de Decomposição de Tarefas
                         IStarDecompositionLink decomposition = new IStarDecompositionLink();
                         decomposition = (IStarDecompositionLink) criarLink(decomposition, codigo, linha);
                         decompositions.add(decomposition);
-                    }
-                    break;
-                    case 7: {
+                        break;
+                    case MEANSEND:
                         // cria uma Ligação de Meio-Fim
                         IStarMeansEndsLink meanEnd = new IStarMeansEndsLink();
                         meanEnd = (IStarMeansEndsLink) criarLink(meanEnd, codigo, linha);
                         meansEnds.add(meanEnd);
-                    }
-                    break;
-                    case 8: {
+                        break;
+                    case ISA:
                         // cria uma Ligação ISA
                         IStarISALink isa = new IStarISALink(); //cria uma Ligação de Dependência
                         isa = (IStarISALink) criarLink(isa, codigo, linha);
                         isas.add(isa);
-                    }
-                    break;
-                    case 9: {
+                        break;
+                    case INS:
                         // cria uma Ligação INS
                         IStarINSLink ins = new IStarINSLink(); //cria uma Ligação de Dependência
                         ins = (IStarINSLink) criarLink(ins, codigo, linha);
                         inss.add(ins);
-                    }
-                    break;
-                    case 10: {
+                        break;
+                    case ISPARTOF:
                         // cria uma Ligação Is-Part-Of
                         IStarIsPartOfLink ispartof = new IStarIsPartOfLink(); //cria uma Ligação de Dependência
                         ispartof = (IStarIsPartOfLink) criarLink(ispartof, codigo, linha);
                         ispartofs.add(ispartof);
-                    }
-                    break;
-                    case 11: {
+                        break;
+                    case OCCUPIES:
                         // cria uma Ligação Occupies
                         IStarOccupiesLink occupies = new IStarOccupiesLink(); //cria uma Ligação de Dependência
                         occupies = (IStarOccupiesLink) criarLink(occupies, codigo, linha);
                         occupiess.add(occupies);
-                    }
-                    break;
-                    case 12: {
+                        break;
+                    case PLAYS:
                         // cria uma Ligação Plays
                         IStarPlaysLink plays = new IStarPlaysLink(); //cria uma Ligação de Dependência
                         plays = (IStarPlaysLink) criarLink(plays, codigo, linha);
                         playss.add(plays);
-                    }
-                    break;
-                    case 13: {
+                        break;
+                    case COVERS:
                         // cria uma Ligação Covers
                         IStarCoversLink covers = new IStarCoversLink(); //cria uma Ligação de Dependência
                         covers = (IStarCoversLink) criarLink(covers, codigo, linha);
                         coverss.add(covers);
-                    }
-                    break;
-                    case 14: {
+                        break;
+                    case AGENT:
                         IStarAgentElement agent = new IStarAgentElement(); //cria um Agent i*
                         agent = (IStarAgentElement) criarAtor(agent, codigo, linha);
                         agents.add(agent);
-                    }
-                    break;
-                    case 15: {
+                        break;
+                    case ROLE:
                         IStarRoleElement role = new IStarRoleElement(); //cria um Role i*
                         role = (IStarRoleElement) criarAtor(role, codigo, linha);
                         roles.add(role);
-                    }
-                    break;
-                    case 16: {
+                        break;
+                    case POSITION:
                         IStarPositionElement position = new IStarPositionElement(); //cria um Position i*
                         position = (IStarPositionElement) criarAtor(position, codigo, linha);
                         positions.add(position);
-                    }
-                    break;
-                    case 17: {
+                        break;
+                    case CONTRIBUTION:
                         // cria uma Ligação Contribution
                         IStarContributionLink contribution = new IStarContributionLink();
                         contribution = (IStarContributionLink) criarLink(contribution, codigo, linha);
                         contributions.add(contribution);
-                    }
-                    break;
-                    default: {
+                        break;
+                    default:
                         while (!(linha.equals("END"))) {//lê atributos até encontrar o token END
                             linha = arquivoEntrada.getLine();
                         }
-                    }
-                    break;
+                        break;
                 }
             }
             linha = arquivoEntrada.getLine();
@@ -255,12 +244,11 @@ public class TokensOpenOME {
      * @param linha
      * @return tipo_elemento (valor inteiro de 0 a xx)
      */
-    private int verificaElementoLink(String linha) {
+    private ElementType verificaElementoLink(String linha) {
         StringTokenizer tokens = new StringTokenizer(linha, ", ");
         String ele_link = null; //ActorElement....
         String token;
         int posIStar;
-        int tipoElemento = -1; //retorna um numero correspondente ao elemento
         while (tokens.hasMoreTokens()) {
             token = tokens.nextToken();
             posIStar = token.indexOf("IStar");
@@ -268,44 +256,63 @@ public class TokensOpenOME {
                 ele_link = token.substring(posIStar + 5, token.length());
             }
         }
-        if (ele_link.equals("ActorElement")) { //Elemento Actor
-            tipoElemento = 0;
-        } else if (ele_link.equals("GoalElement")) { //Elemento Objetivo
-            tipoElemento = 1;
-        } else if (ele_link.equals("TaskElement")) {//Elemento Tarefa
-            tipoElemento = 2;
-        } else if (ele_link.equals("SoftGoalElement")) {//Elemento Objetivo Soft
-            tipoElemento = 3;
-        } else if (ele_link.equals("ResourceElement")) { //Elemento Recurso
-            tipoElemento = 4;
-        } else if (ele_link.equals("DependencyLink")) {//Ligação de Dependência
-            tipoElemento = 5;
-        } else if (ele_link.equals("DecompositionLink")) {//Ligação de Decomposição de Tarefas
-            tipoElemento = 6;
-        } else if (ele_link.equals("MeansEndsLink")) {//Ligação Meio-Fim
-            tipoElemento = 7;
-        } else if (ele_link.equals("ISALink")) {//Ligação ISA
-            tipoElemento = 8;
-        } else if (ele_link.equals("INSLink")) {//Ligação INS
-            tipoElemento = 9;
-        } else if (ele_link.equals("PartsLink")) {//Ligação Is-Part-Of
-            tipoElemento = 10;
-        } else if (ele_link.equals("OccupiesLink")) {//Ligação Occupies
-            tipoElemento = 11;
-        } else if (ele_link.equals("PlaysLink")) {//Ligação Plays
-            tipoElemento = 12;
-        } else if (ele_link.equals("CoversLink")) {//Ligação Covers
-            tipoElemento = 13;
-        } else if (ele_link.equals("AgentElement")) {//Elemento Agent
-            tipoElemento = 14;
-        } else if (ele_link.equals("RoleElement")) {//Elemento Role
-            tipoElemento = 15;
-        } else if (ele_link.equals("PositionElement")) {//Elemento Position
-            tipoElemento = 16;
-        } else if (ele_link.contains("Contribution")) { //Elemento Contribution
-            tipoElemento = 17;
+
+        // maybe change this to Propertie mapping structure?!.
+        switch (ele_link) {
+            case "ActorElement":
+                return ElementType.ACTOR;
+            case "AgentElement":
+                return ElementType.AGENT;
+            case "RoleElement":
+                return ElementType.ROLE;
+            case "PositionElement":
+                return ElementType.POSITION;
+            //
+            case "GoalElement":
+                return ElementType.GOAL;
+            case "TaskElement":
+                return ElementType.TASK;
+            case "SoftGoalElement":
+                return ElementType.SOFTGOAL;
+            case "ResourceElement":
+                return ElementType.RESOURCE;
+            //
+            case "DependencyLink":
+                return ElementType.DEPENDENCY;
+            case "DecompositionLink":
+                return ElementType.DECOMPOSITION;
+            case "Contribution":
+                return ElementType.CONTRIBUTION;
+            case "MeansEndsLink":
+                return ElementType.MEANSEND;
+            //
+            case "ISALink":
+                return ElementType.ISA;
+            case "INSLink":
+                return ElementType.INS;
+            case "PartsLink":
+                return ElementType.ISPARTOF;
+            case "OccupiesLink":
+                return ElementType.OCCUPIES;
+            case "PlaysLink":
+                return ElementType.PLAYS;
+            case "CoversLink":
+                return ElementType.COVERS;
+            default:
+                //error: don't reconized?
+                break;
         }
-        return tipoElemento;
+        return null;
+    }
+
+    private enum ElementType {
+
+        ACTOR, AGENT, ROLE, POSITION,
+        GOAL, TASK, SOFTGOAL, RESOURCE,
+        //
+        DEPENDENCY, CONTRIBUTION, DECOMPOSITION, MEANSEND,
+        //
+        ISA, INS, OCCUPIES, PLAYS, COVERS, ISPARTOF
     }
 
     /**
