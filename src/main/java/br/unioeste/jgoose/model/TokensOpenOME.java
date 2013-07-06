@@ -42,7 +42,6 @@ public class TokensOpenOME {
     private ArrayList<IStarElement> goals, softgoals, tasks, resources; //OMEElements
     private ArrayList<IStarLink> dependencies, meansEnds, decompositions, isas;
     private ArrayList<IStarLink> inss, contributions, ispartofs, coverss, occupiess, playss; //OMELinks
-    private boolean openOME = true; //verifica se o arquivo está no formato OpenOME
     private String dirEntrada;
     Arquivo arquivoEntrada;
 
@@ -102,6 +101,7 @@ public class TokensOpenOME {
         String codigo = null;
         ElementType elementType = null;
         while (linha != null) {
+            // <editor-fold defaultstate="collapsed" desc="Read all the elements (and links)">
             if (verificaToken(linha)) {
                 codigo = armazenaCodigo(linha);
                 linha = arquivoEntrada.getLine(); // IN OMEElement, OMEElementClass ou IN OMELink, OMELinkClass,
@@ -213,9 +213,12 @@ public class TokensOpenOME {
                         break;
                 }
             }
+            //</editor-fold>
             linha = arquivoEntrada.getLine();
         }
-        //Criar os atributos Links
+
+        //update references of links
+        //and 'connect' elements.
         criarLinkElementos();
     }
 
@@ -236,13 +239,10 @@ public class TokensOpenOME {
     }
 
     /**
-     * Verifica qual tipo de elemento ou link é o token atual 0.
-     * IStarActorElement 1. IStarGoalElement 2. IStarTaskElement 3.
-     * IStarSoftGoalElement 4. IStarResourceElement 5. IStarDependencyLink 6.
-     * IStarDecompositionLink 7. IStarMeansEndsLink 8. IStarISALink
+     * Verifica qual tipo de elemento ou link é o token atual.
      *
      * @param linha
-     * @return tipo_elemento (valor inteiro de 0 a xx)
+     * @return tipo do elemento
      */
     private ElementType verificaElementoLink(String linha) {
         StringTokenizer tokens = new StringTokenizer(linha, ", ");
@@ -257,7 +257,8 @@ public class TokensOpenOME {
             }
         }
 
-        // maybe change this to Propertie mapping structure?!.
+        // SUGGEST: maybe change this to Propertie mapping structure?!.
+        // <editor-fold desc="switch element types">
         switch (ele_link) {
             case "ActorElement":
                 return ElementType.ACTOR;
@@ -302,6 +303,7 @@ public class TokensOpenOME {
                 //error: don't reconized?
                 break;
         }
+        //</editor-fold>
         return null;
     }
 
@@ -335,7 +337,7 @@ public class TokensOpenOME {
         if (atributo.charAt(0) == ' ') {
             int i = 0;
             while (atributo.charAt(i) == ' ') {
-                i = i + 1;
+                i += 1;
             }
             atributo = atributo.substring(i, atributo.length());
         }
@@ -373,7 +375,6 @@ public class TokensOpenOME {
                 nomeAtributo = atributo.substring(atributo.indexOf("name") + 6, atributo.length() - 1);
                 elementActor.setName(nomeAtributo);
             } else if (tipoAtributo.equals("links")) {
-                openOME = false;
                 //nomeAtributo = tokens.nextToken();
                 nomeAtributo = atributo.substring(atributo.indexOf("links") + 5, atributo.length());
                 elementActor.setLinks(nomeAtributo);
@@ -411,7 +412,6 @@ public class TokensOpenOME {
                 nomeAtributo = atributo.substring(atributo.indexOf("name") + 4, atributo.length());
                 element.setName(nomeAtributo);
             } else if (tipoAtributo.equals("links")) {
-                openOME = false;
                 nomeAtributo = tokens.nextToken();
                 nomeAtributo = atributo.substring(atributo.indexOf("links") + 5, atributo.length());
                 element.setLinks(nomeAtributo);
@@ -459,11 +459,17 @@ public class TokensOpenOME {
 
     /**
      * Método responsável por preencher o atributo links dos actors, goals,
-     * softgoals, tasks e resourcesprivate private ArrayList
-     * <IStarActorElement>actors; private ArrayList
-     * goals,softgoals,tasks,resources; //OMEElements private ArrayList
-     * dependencies,meansEnds,decompositions,isas, inss, contributions,
-     * ispartofs; //OMELinks
+     * softgoals, tasks e resources.
+     * <br/>
+     * private ArrayList
+     * <code> &lt;IStarActorElement&gt; </code>actors;
+     * <br/>
+     * private ArrayList goals,softgoals,tasks,resources;
+     * <br/>
+     * //OMEElements
+     * <br/>
+     * private ArrayList dependencies,meansEnds,decompositions,isas, inss,
+     * contributions, ispartofs; //OMELinks
      */
     private void criarLinkElementos() {
         int cont = 0;
