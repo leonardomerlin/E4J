@@ -41,6 +41,10 @@ public class SaveAction extends AbstractAction {
 
     /**
      * Saves XML+PNG format.
+     * @param editor
+     * @param filename
+     * @param bg 
+     * @throws IOException  
      */
     protected void saveXmlPng(BasicGraphEditor editor, String filename, Color bg) throws IOException {
         mxGraphComponent graphComponent = editor.getGraphComponent();

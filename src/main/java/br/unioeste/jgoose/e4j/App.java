@@ -1,7 +1,6 @@
 package br.unioeste.jgoose.e4j;
 
 import br.unioeste.jgoose.e4j.swing.EditorJFrame;
-import br.unioeste.jgoose.e4j.swing.EditorWindowListener;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -25,6 +24,5 @@ public class App {
         EditorJFrame editor = new EditorJFrame();
         editor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         editor.setVisible(true);
-        editor.addWindowListener(new EditorWindowListener(editor));
     }
 }

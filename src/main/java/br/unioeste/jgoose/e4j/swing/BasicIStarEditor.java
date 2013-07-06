@@ -50,6 +50,8 @@ public class BasicIStarEditor extends BasicGraphEditor {
      */
     public BasicIStarEditor(String appTitle, mxGraphComponent component) {
         super(appTitle, component);
+        
+        graphComponent.setEnterStopsCellEditing(true);
         final mxGraph graph = graphComponent.getGraph();
 
         // Load and creates the shapes palette

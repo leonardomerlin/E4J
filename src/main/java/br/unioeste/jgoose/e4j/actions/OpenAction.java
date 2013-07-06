@@ -33,6 +33,9 @@ public class OpenAction extends AbstractAction {
 
     /**
      * Reads XML+PNG format.
+     * @param editor
+     * @param file 
+     * @throws IOException  
      */
     protected void openXmlPng(BasicGraphEditor editor, File file) throws IOException {
         Map<String, String> text = mxPngTextDecoder.decodeCompressedText(new FileInputStream(file));
@@ -51,6 +54,9 @@ public class OpenAction extends AbstractAction {
     }
 
     /**
+     * @param editor 
+     * @param file 
+     * @param gdText 
      * @throws IOException
      *
      */
@@ -68,6 +74,7 @@ public class OpenAction extends AbstractAction {
         editor.setCurrentFile(new File(lastDir + "/" + filename));
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         BasicGraphEditor editor = EditorActions.getEditor(e);
         if (editor != null) {

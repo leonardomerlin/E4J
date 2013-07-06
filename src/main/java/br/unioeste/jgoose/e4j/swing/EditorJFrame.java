@@ -38,13 +38,13 @@ public class EditorJFrame extends JFrame {
         int defaultCloseOperation = getDefaultCloseOperation();
         switch (defaultCloseOperation) {
             case JFrame.DISPOSE_ON_CLOSE:
-//                dispose();
+                dispose();
                 break;
             case JFrame.DO_NOTHING_ON_CLOSE:
                 break;
             case JFrame.EXIT_ON_CLOSE:
-//                    System.exit(1);
-//                    frame.dispose();
+                    dispose();
+                    System.exit(0);
                 break;
             case JFrame.HIDE_ON_CLOSE:
                 this.setVisible(false);
