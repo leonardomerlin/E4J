@@ -7,6 +7,13 @@
  */
 package seg.jUCMNav.importexport.ccistarml;
 
+/**
+ * An object of this class represents an error on the parsing of the iStarML
+ * file.
+ *
+ * @author Carlos Cares
+ * @author Leonardo Merlin - leonardo.merlin at unioeste.br
+ */
 public class ccfileError {
 
     public boolean isXmlError = true;

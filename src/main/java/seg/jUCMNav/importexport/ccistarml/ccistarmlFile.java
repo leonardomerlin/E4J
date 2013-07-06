@@ -14,6 +14,15 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Encapsulates an abstract functionality for handling iStarML files. It allows
+ * XML parsing and iStarML parsing separately. Two different methods allow
+ * handling the iStarML data structure. On the other hand it provides the basic
+ * functionality to create an iStarML file.
+ *
+ * @author Carlos Cares
+ * @author Leonardo Merlin - leonardo.merlin at unioeste.br
+ */
 public final class ccistarmlFile {
 
     public StringBuffer text = new StringBuffer();

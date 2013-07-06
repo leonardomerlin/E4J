@@ -10,6 +10,13 @@ package seg.jUCMNav.importexport.ccistarml;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/**
+ * An object of this class represents an element of the iStarML file or a
+ * relationship between two elements of the same file.
+ *
+ * @author Carlos Cares
+ * @author Leonardo Merlin - leonardo.merlin at unioeste.br
+ */
 public final class ERelement {
 
     public String diagram;
@@ -25,10 +32,10 @@ public final class ERelement {
     }
 
     /**
-     * 
+     *
      * @param name
      * @param attributes
-     * @param erElementList 
+     * @param erElementList
      */
     public ERelement(String name, HashMap attributes, ERelementList erElementList) {
         this.diagram = erElementList.currentDiagram;
@@ -38,7 +45,6 @@ public final class ERelement {
         erElementList.add(this);
     }
 
-    
     public ERelement(String name, String text, ERelementList erElementList) {
         this.diagram = erElementList.currentDiagram;
         this.name = name;
@@ -49,7 +55,8 @@ public final class ERelement {
 
     /**
      * System Output: Diagram - ID : name --> text | attribute
-     * @deprecated Use System.out.println(this.toString())
+     *
+     * @deprecated Use System.out.println(ERelement.this)
      */
     public void display() {
         String w;
@@ -117,10 +124,9 @@ public final class ERelement {
         ERelement.lastID = "" + c[0] + c[1] + c[2] + c[3];
         return ERelement.lastID;
     }
-    
-    
+
     /**
-     * 
+     *
      * @return Diagram - ID : name --> text | attribute
      */
     @Override
@@ -133,5 +139,4 @@ public final class ERelement {
         }
         return this.diagram + "-" + this.ID + ":" + this.name + "-->" + w;
     }
-    
 }

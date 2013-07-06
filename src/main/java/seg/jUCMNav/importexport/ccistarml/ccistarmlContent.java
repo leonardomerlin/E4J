@@ -16,6 +16,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
+/**
+ * This class supports a dynamic data structure which represents the iStarML
+ * file structure. Each object of this class represents a tag in the iStarML
+ * structure. Nested structures represent nested tags.
+ *
+ * @author Carlos Cares
+ * @author Leonardo Merlin - leonardo.merlin at unioeste.br
+ */
 public class ccistarmlContent {
 
     public String tagName = "";

@@ -15,8 +15,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        ERelementList erL;
-        ERelement erle;
         ccistarmlFile f = new ccistarmlFile();
         f.loadFile("sample/sample1.istarml"); // put your file name here !
         f.xmlParser();

@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>br.unioeste.leonardomerlin</groupId>
-  <artifactId>TCC-istarML</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>br.unioeste.jgoose</groupId>
+  <artifactId>istarml-api</artifactId>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>TCC-istarML</name>
-  <url>http://maven.apache.org</url>
+  <name>iStarML API</name>
+  <url>http://github.com/unioeste/jgoose-istarml-api/</url>
     <build>
         <plugins>
             <plugin>
@@ -35,7 +35,7 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>TCC-Log</artifactId>
+      <artifactId>Log</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
