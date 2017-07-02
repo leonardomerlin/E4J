@@ -5,18 +5,10 @@ This project is an JGraph Diagram Editor for JGOOSE.
 JGOOSE is a mapping tool from **organizational models** to **UML Use Cases**.
 
 ## Usage
-Comming soon.
 
-## How to contribute
+This project was build on 2013. It's divide into 3 branchs:
 
-1. [Fork](https://help.github.com/articles/fork-a-repo) **E4J**
-2. Create a feature branch - `git checkout -b my_feature_branch`
-3. Push to your branch - `git push origin my_feature_branch`
-4. Create a [Pull Request](http://help.github.com/pull-requests/) from your
-   branch
-5. That's it!
-
-Or use [git-flow](https://github.com/nvie/gitflow).
-
-## Need a help?
-Me too. Fork this!
+- [E4J](https://github.com/leonardomerlin/E4J/tree/impl-e4j): core module. The entide visual interface of editor is here.
+- [JGOOSE](https://github.com/leonardomerlin/E4J/tree/impl-jgoose)
+  - [IEEE article](http://ieeexplore.ieee.org/document/7836003/?reload=true) about the evolution of project
+- [iStarML](https://github.com/leonardomerlin/E4J/tree/impl-istarml): an module to interchange languages
